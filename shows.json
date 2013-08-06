@@ -1,0 +1,28 @@
+{
+  "shows" : [
+    {
+      "id" : "alice",
+      "title" : "Alice’s Adventures in Wonderland",
+      "byline" : "Adapted by Matt Powell & directed by Scott Campbell",
+      "dates" : [
+        "2013-09-28 11:00", "2013-09-28 13:00",
+        "2013-09-29 11:00", "2013-09-29 13:00",
+        "2013-10-05 11:00", "2013-10-05 13:00",
+        "2013-10-06 11:00", "2013-10-06 13:00",
+        "2013-10-12 11:00", "2013-10-12 13:00",
+        "2013-10-13 11:00", "2013-10-13 13:00"
+      ],
+      "venue" : "malthouse"
+    }
+  ],
+  
+  "venues" : [
+    {
+      "id"      : "malthouse",
+      "name"    : "The Malthouse",
+      "address" : "71 Colombo Street, Christchurch",
+      "geo"     : [ -43.560974, 172.636555 ],
+      "phone"   : "03 332 3271"
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+@import url("http://hello.myfonts.net/count/26421d");
+ 
+@font-face {font-family: 'Populaire';src: url('fonts/26421D_0_0.eot');src: url('fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/26421D_0_0.woff') format('woff'),url('fonts/26421D_0_0.ttf') format('truetype');}
+
+$BLACK:  #222;
+$WHITE:  #f8f8f8;
+$BLUE:   #00aeef;
+$PINK:   #ec008c;
+$YELLOW: #fff301;
+
+@mixin populaire {
+  font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-weight: 200;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 100;
+  
+  small {
+    font-weight: 100;
+  }
+}
+
+h2 {
+  @include populaire;
+  font-size: 600%;
+  line-height: 1em;
+}
+
+a {
+  color: $BLUE;
+}
+
+section {
+  position: relative;
+  background: white;
+  padding: 20px 0;
+}
+
+#next {
+  padding: 0;
+  
+  .show {
+    height: 384px;
+    overflow: hidden;
+    position: relative;
+    
+    &.alice {
+      background-color: #fbaf3f;
+      background-image: url(../img/splash/alice/stripes.png);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, #f7931d), color-stop(.5, transparent), to(transparent));
+      background-image: -moz-linear-gradient(#f7931d 50%, transparent 50%, transparent);
+      background-image: -o-linear-gradient(#f7931d 50%, transparent 50%, transparent);
+      background-image: linear-gradient(#f7931d 50%, transparent 50%, transparent);
+      background-size: 8px 128px;
+      background-repeat: repeat;
+      background-position: 0 0;
+      color: white;
+      
+      a[rel="book"] {
+        position: absolute;
+        left: 50%;
+        bottom: 1em;
+        width: 25%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: -12.5%;
+      }
+
+      .container {
+        background: url(../img/splash/alice/title.png) no-repeat 50% 0;
+        height: 384px;
+
+        h2 {
+          position: absolute;
+          left: 0;
+          top: -1000px;
+        }
+      
+        h3,
+        .dates,
+        .times {
+          margin: 0;
+          font-size: 20px;
+          line-height: 32px;
+          vertical-align: middle;
+          font-weight: 100;
+        }
+      
+        .col-lg-4 {
+          padding-top: 128px;
+          text-align: right;
+        
+          &.col-lg-offset-4 {
+            text-align: left;
+          }
+        }
+        
+        @media (max-width: 767px) {
+          h2, h3, .dates, .times {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin: 0;
+      padding: 0;
+      
+      a.section {
+        @include populaire;
+        display: block;
+        font-size: 32px;
+        font-weight: 100;
+        color: $BLUE;
+        text-decoration: none;
+        line-height: 48px;
+        vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+        &:hover {
+          color: $PINK;
+        }
+      }
+      
+      p {
+        font-size: 1.142857143em;
+        margin: 0.25em 0 1em;
+      }
+    }
+  }
+}
+
+.top-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  
+  li {
+    position: relative;
+    
+    a.section {
+      border-bottom: none;
+    }
+    
+    p {
+      position: absolute;
+      left: -8px;
+      right: -8px;
+      top: 100%;
+      margin: 8px 0 0;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      display: none;
+      font-size: inherit;
+      z-index: 1000;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 8px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid rgba(0, 0, 0, 0.85);
+      }
+    }
+    
+    &:hover p {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 1023px) {
+    padding: 0 15px;
+    
+    li {
+      float: left;
+      width: auto !important;
+      padding: 0 5px;
+      
+      a.section {
+        font-size: 24px;
+        line-height: 32px;
+      }
+      
+      &:hover p {
+        display: none;
+      }
+    }
+  }
+}
+
+#home {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  padding-bottom: 20px;
+  
+  .title {
+    .punch {
+      margin-top: -80px;
+      height: 240px;
+      background: url(../img/punch.png) no-repeat 100% 0;
+      background-size: contain;
+    }
+    
+    h1 {
+      @include populaire;
+      color: $PINK;
+      font-size: 64px;
+      line-height: 0.85em;
+      margin: 20px 0 0;
+    }
+    
+    h2 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 32px;
+    }
+    
+    @media (min-width: 1200px) {
+      h1 { font-size: 80px; }
+    }
+    
+    @media (max-width: 979px) {
+      h2 { font-size: 24px; }
+      .punch { margin-top: -40px; height: 188px; }
+    }
+
+    @media (max-width: 767px) {
+      h1 { font-size: 40px; text-align: center; }
+      h2 { font-size: 24px; text-align: center; }
+      
+      .punch {
+        width: 84px;
+        height: 84px;
+        margin: 20px auto;
+        background-image: url(../img/punch-small.png);
+        background-position: 50% 50%;
+      }
+    }
+    
+  }
+}
+
+#shows {
+  background: $BLUE;
+  color: white;
+  padding-bottom: 0;
+  
+  .cushion {
+    color: $YELLOW;
+  }
+  
+  .recent-shows {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (max-width: 1023px) {
+      margin: 20px -10px;
+      .col-lg-3 {
+        float: left;
+        width: 25%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  
+  .timeline {
+    margin-top: 20px;
+    overflow-x: scroll;
+    padding-bottom: 20px;
+    
+    @media (max-width: 767px) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    
+    .year {
+      float: left;
+      width: 22.857142857em;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      
+      h4 {
+        font-size: 400%;
+        margin: 0;
+        padding: 0 0.5em 0.321428572em 0;
+        border-bottom: 1px solid white;
+        line-height: 1;
+        @include populaire;
+      }
+      
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 1.285714286em 2em 0 0;
+        
+        li {
+          display: block;
+          margin: 0 0 0.5em;
+          padding: 0 0 0 1.285714286em;
+          text-indent: -1.285714286em;
+        }
+      }
+    }
+  }
+}
+
+#people {
+  background: $PINK;
+  color: white;
+  
+  .committee {
+    margin: 0;
+  
+    dt {
+      font-weight: 100;
+      font-size: 24px;
+      line-height: 40px;
+    }
+    
+    dd {
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0 0 0 1em;
+    }
+  }
+}
+
+.costumes-website {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $BLACK;
+  color: #ccc;
+  padding: 1em 40px 1em 20px;
+  
+  p {
+    margin: 0;
+    text-shadow: 0 -1px 0 black;
+  }
+  
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    margin: 0;
+    color: $WHITE;
+    text-shadow: none;
+  }
+}
+
+.modal.booking {
+  .input-group {
+    input { text-align: right; }
+    [rel="minus"] { border-right: none; }
+    [rel="plus"]  { border-left:  none; }
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+  }
+  
+  section {
+    padding: 20px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  /* Don't forget your Retina CSS! */
+  
+}

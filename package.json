@@ -1,0 +1,11 @@
+{
+  "name": "malthouse",
+  "description": "Canterbury Children’s Theatre website",
+  "author": "Matt Powell <fauxparse@gmail.com>",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script" : "*",
+    "express": "3.x",
+    "ejs" : "*"
+  }
+}
