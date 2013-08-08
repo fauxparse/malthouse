@@ -48,11 +48,14 @@ section {
       #next .show.alice a[rel="book"] {
         position: absolute;
         left: 50%;
-        bottom: 1em;
+        bottom: 10px;
         width: 25%;
         padding-left: 0;
         padding-right: 0;
-        margin-left: -12.5%; }
+        margin-left: -12.5%;
+        font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 200%;
+        line-height: 0.9em; }
       #next .show.alice .container {
         background: url(../img/splash/alice/title.png) no-repeat 50% 0;
         height: 384px; }
@@ -269,12 +272,58 @@ nav ul {
     color: #f8f8f8;
     text-shadow: none; }
 
+.modal.booking .modal-title {
+  font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #ec008c;
+  font-size: 250%;
+  line-height: 0.75em; }
 .modal.booking .input-group input {
-  text-align: right; }
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 150%; }
 .modal.booking .input-group [rel="minus"] {
   border-right: none; }
 .modal.booking .input-group [rel="plus"] {
   border-left: none; }
+.modal.booking .ticket-pricing {
+  line-height: 34px;
+  font-size: 150%;
+  vertical-align: middle;
+  padding-left: 0; }
+  .modal.booking .ticket-pricing .total-price {
+    font-weight: bold; }
+.modal.booking .loading-overlay {
+  background: white url(../img/loading.gif) no-repeat 50% 50%;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  .modal.booking .loading-overlay h4 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    margin-top: 72px;
+    font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 200%; }
+
+.btn-info {
+  background-color: #00aeef;
+  border-color: #0089bc; }
+  .btn-info:hover, .btn-info:active, .btn-info:focus {
+    background-color: #23c3ff;
+    border-color: #00aeef; }
+
+.btn-success {
+  background-color: #8dc63f;
+  border-color: #72a230; }
+  .btn-success:hover, .btn-success:active, .btn-success:focus {
+    background-color: #a4d266;
+    border-color: #8dc63f; }
 
 @media (max-width: 767px) {
   body {

@@ -2,6 +2,19 @@
 
   $(function() {
     var navPosition, topNav;
+    Show.fetch().done(function() {
+      return $("body").on("click", "a[rel=book]", function(e) {
+        var booking, form;
+        e.preventDefault();
+        booking = new Booking({
+          show_id: $(e.target).attr("data-show")
+        });
+        form = new BookingForm({
+          booking: booking
+        });
+        return form.show();
+      });
+    });
     topNav = $("#home .navigation").clone().addClass("top-navigation").appendTo("body").hide();
     navPosition = $("#home .navigation").offset().top;
     $(window).on("scroll", function() {

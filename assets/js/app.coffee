@@ -1,4 +1,11 @@
 $ ->
+  Show.fetch().done ->
+    $("body").on "click", "a[rel=book]", (e) ->
+      e.preventDefault()
+      booking = new Booking show_id: $(e.target).attr("data-show")
+      form = new BookingForm booking: booking
+      form.show()
+
   topNav = $("#home .navigation").clone()
     .addClass("top-navigation")
     .appendTo("body")

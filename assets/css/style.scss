@@ -7,6 +7,7 @@ $WHITE:  #f8f8f8;
 $BLUE:   #00aeef;
 $PINK:   #ec008c;
 $YELLOW: #fff301;
+$GREEN:  #8dc63f;
 
 @mixin populaire {
   font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -67,11 +68,14 @@ section {
       a[rel="book"] {
         position: absolute;
         left: 50%;
-        bottom: 1em;
+        bottom: 10px;
         width: 25%;
         padding-left: 0;
         padding-right: 0;
         margin-left: -12.5%;
+        @include populaire;
+        font-size: 200%;
+        line-height: 0.9em;
       }
 
       .container {
@@ -374,11 +378,69 @@ nav {
 }
 
 .modal.booking {
+  .modal-title {
+    @include populaire;
+    color: $PINK;
+    font-size: 250%;
+    line-height: 0.75em;
+  }
+
   .input-group {
-    input { text-align: right; }
+    input {
+      text-align: center;
+      padding-left: 4px;
+      padding-right: 4px;
+      font-size: 150%;
+    }
     [rel="minus"] { border-right: none; }
     [rel="plus"]  { border-left:  none; }
   }
+  
+  .ticket-pricing {
+    line-height: 34px;
+    font-size: 150%;
+    vertical-align: middle;
+    padding-left: 0;
+    .total-price { font-weight: bold; }
+  }
+  
+  .loading-overlay {
+    background: white url(../img/loading.gif) no-repeat 50% 50%;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    h4 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      text-align: center;
+      margin-top: 72px;
+      @include populaire;
+      font-size: 200%;
+    }
+  }
+}
+
+@mixin button($base) {
+  background-color: $base;
+  border-color: darken($base, 10%);
+  &:hover, &:active, &:focus {
+    background-color: lighten($base, 10%);
+    border-color: $base;
+  }
+}
+
+.btn-info {
+  @include button($BLUE);
+}
+
+.btn-success {
+  @include button($GREEN);
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {

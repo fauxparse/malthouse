@@ -1,0 +1,46 @@
+@import url("http://hello.myfonts.net/count/26421d");
+@font-face {
+  font-family: 'Populaire';
+  src: url(fonts/26421D_0_0.eot);
+  src: url(fonts/26421D_0_0.eot?#iefix) format("embedded-opentype"), url(fonts/26421D_0_0.woff) format("woff"), url(fonts/26421D_0_0.ttf) format("truetype"); }
+
+h1 {
+  font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  h1 strong {
+    font-weight: inherit;
+    color: #00aeef; }
+
+.progress {
+  margin-bottom: 0; }
+
+.performance {
+  margin-top: 20px;
+  page-break-inside: avoid; }
+
+header {
+  margin-bottom: 1em; }
+  header h2 {
+    font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 200%;
+    line-height: 1em;
+    margin: 0.25em 0; }
+  header .col-lg-1 {
+    text-align: right; }
+  header .row:first-child div {
+    border-top: 1px solid black; }
+    header .row:first-child div.col-lg-1 {
+      padding-top: 1.25em; }
+
+.container > header .row:first-child div {
+  border-top: none; }
+  .container > header .row:first-child div.col-lg-1 {
+    padding-top: 2em; }
+
+.booking div {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 1px solid #ccc; }
+  .booking div:last-child {
+    border-top: none; }
+.booking .col-lg-1 {
+  text-align: right; }

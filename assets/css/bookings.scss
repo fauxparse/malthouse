@@ -1,0 +1,78 @@
+@import url("http://hello.myfonts.net/count/26421d");
+ 
+@font-face {font-family: 'Populaire';src: url('fonts/26421D_0_0.eot');src: url('fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/26421D_0_0.woff') format('woff'),url('fonts/26421D_0_0.ttf') format('truetype');}
+
+$BLACK:  #222;
+$WHITE:  #f8f8f8;
+$BLUE:   #00aeef;
+$PINK:   #ec008c;
+$YELLOW: #fff301;
+$GREEN:  #8dc63f;
+
+@mixin populaire {
+  font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  @include populaire;
+  strong {
+    font-weight: inherit;
+    color: $BLUE;
+  }
+}
+
+.progress {
+  margin-bottom: 0;
+}
+
+.performance {
+  margin-top: 20px;
+  page-break-inside: avoid;
+}
+
+header {
+  h2 {
+    @include populaire;
+    font-size: 200%;
+    line-height: 1em;
+    margin: 0.25em 0;
+  }
+
+  .col-lg-1 {
+    text-align: right;
+  }
+  
+  .row:first-child div {
+    border-top: 1px solid black;
+    
+    &.col-lg-1 {
+      padding-top: 1.25em;
+    }
+  }
+  
+  margin-bottom: 1em;
+}
+
+.container > header {
+  .row:first-child div {
+    border-top: none;
+
+    &.col-lg-1 {
+      padding-top: 2em;
+    }
+  }
+}
+
+.booking {
+  div {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-top: 1px solid #ccc;
+    &:first-child { }
+    &:last-child { border-top: none; }
+  }
+  
+  .col-lg-1 {
+    text-align: right;
+  }
+}
