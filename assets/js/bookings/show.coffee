@@ -1,6 +1,10 @@
 class window.Venue extends Spine.Model
-  @configure "Venue", "name", "address", "phone", "geo"
+  @configure "Venue", "name", "address", "phone", "geo", "capacity"
 
+  capacity: (capacity) ->
+    @_capacity = parseInt(capacity, 10) if capacity?
+    @_capacity
+    
 class window.Show extends Spine.Model
   @configure "Show", "title", "byline", "dates", "venue", "price"
   
@@ -14,15 +18,19 @@ class window.Show extends Spine.Model
     
   dates: (dates) ->
     if dates?
-      @_dates = (new Date(Date.parse(date)) for date in dates)
+      @_dates = (new Date(Date.parseDB(date)) for date in dates)
     (@_dates || []).slice 0
     
   price: (price) ->
     @_price = parseInt(price, 10) if price?
     @_price
     
+  venue: (venue) ->
+    @_venue_id = venue.id or venue if venue?
+    Venue.find @_venue_id
+
   @fetch: ->
-    $.getJSON("/shows.json")
+    $.getJSON("/shows")
       .done (data) =>
-        # Venue.refresh data.venues
+        Venue.refresh data.venues
         Show.refresh data.shows

@@ -105,7 +105,7 @@ class window.BookingForm extends Spine.Controller
     
   @successTemplate: "
     <h3>Thanks for booking!</h3>
-    <p>Your booking number is <strong>{{reference}}</strong>.</p>
+    <p>Your booking number is <strong>{{id}}</strong>.</p>
     {{#internetBanking}}
     <p>Please use this number as a reference when making your payment of <strong>{{total}}</strong>. Our account details are:</p>
     <blockquote>

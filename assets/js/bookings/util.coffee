@@ -1,3 +1,6 @@
+String::ucfirst = ->
+  @substr(0, 1).toUpperCase() + @substr(1)
+
 Number::pad = (n = 2) ->
   str = @toString()
   str = "0" + str while str.length < 2
@@ -18,6 +21,11 @@ Date.DAYS = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 
 Date::db = ->
   "#{@getFullYear()}-#{(@getMonth() + 1).pad()}-#{@getDate().pad()} #{@getHours().pad()}:#{@getMinutes().pad()}"
+  
+Date.parseDB = (date) ->
+  return date unless typeof date is "string"
+  parts = (parseInt p, 10 for p in date.split(/[^\d]+/))
+  new Date parts[0], parts[1] - 1, parts[2], parts[3], parts[4]
 
 Date::label = ->
   "#{@date()}, #{@time()}"

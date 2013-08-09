@@ -10,7 +10,7 @@
       Booking.__super__.constructor.apply(this, arguments);
     }
 
-    Booking.configure("Booking", "reference", "show_id", "date", "tickets", "name", "email", "phone", "payment");
+    Booking.configure("Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount");
 
     Booking.extend(Spine.Model.Ajax);
 
@@ -51,9 +51,16 @@
       return this._payment;
     };
 
+    Booking.prototype.paid = function(paid) {
+      if (paid != null) {
+        this._paid = !!paid;
+      }
+      return this._paid;
+    };
+
     Booking.prototype.date = function(date) {
       if (date != null) {
-        this._date = new Date(Date.parse(date));
+        this._date = new Date(Date.parseDB(date));
       }
       return this._date;
     };
@@ -63,6 +70,13 @@
         this._tickets = parseInt(tickets, 10);
       }
       return this._tickets;
+    };
+
+    Booking.prototype.amount = function(amount) {
+      if (amount != null) {
+        this._amount = parseInt(amount, 10);
+      }
+      return this._amount;
     };
 
     Booking.prototype.show = function() {
@@ -105,10 +119,28 @@
     };
 
     Booking.prototype.toJSON = function() {
-      var _ref;
-      return $.extend({}, Booking.__super__.toJSON.apply(this, arguments), {
+      var json, _ref;
+      json = Booking.__super__.toJSON.apply(this, arguments);
+      return $.extend({}, json, {
         date: (_ref = this.date()) != null ? _ref.db() : void 0
       });
+    };
+
+    Booking.fetchSummary = function() {
+      var promise;
+      promise = $.Deferred();
+      $.getJSON("/bookings").done(function(data) {
+        Show.refresh(data.shows);
+        return promise.resolve();
+      });
+      return promise;
+    };
+
+    Booking.partition = function() {
+      return this.all().reduce(function(hash, booking) {
+        var _name, _ref;
+        return ((_ref = hash[_name = booking.date().db()]) != null ? _ref : hash[_name] = []).push(booking) && hash;
+      }, {});
     };
 
     return Booking;

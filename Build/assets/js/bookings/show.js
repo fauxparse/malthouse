@@ -10,7 +10,14 @@
       Venue.__super__.constructor.apply(this, arguments);
     }
 
-    Venue.configure("Venue", "name", "address", "phone", "geo");
+    Venue.configure("Venue", "name", "address", "phone", "geo", "capacity");
+
+    Venue.prototype.capacity = function(capacity) {
+      if (capacity != null) {
+        this._capacity = parseInt(capacity, 10);
+      }
+      return this._capacity;
+    };
 
     return Venue;
 
@@ -48,7 +55,7 @@
           _results = [];
           for (_i = 0, _len = dates.length; _i < _len; _i++) {
             date = dates[_i];
-            _results.push(new Date(Date.parse(date)));
+            _results.push(new Date(Date.parseDB(date)));
           }
           return _results;
         })();
@@ -63,9 +70,17 @@
       return this._price;
     };
 
+    Show.prototype.venue = function(venue) {
+      if (venue != null) {
+        this._venue_id = venue.id || venue;
+      }
+      return Venue.find(this._venue_id);
+    };
+
     Show.fetch = function() {
       var _this = this;
-      return $.getJSON("/shows.json").done(function(data) {
+      return $.getJSON("/shows").done(function(data) {
+        Venue.refresh(data.venues);
         return Show.refresh(data.shows);
       });
     };

@@ -1,5 +1,5 @@
 class window.Booking extends Spine.Model
-  @configure "Booking", "reference", "show_id", "date", "tickets", "name", "email", "phone", "payment"
+  @configure "Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount"
   @extend Spine.Model.Ajax
   
   @EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ # meh, close enough
@@ -24,13 +24,21 @@ class window.Booking extends Spine.Model
     @_payment = payment if payment?
     @_payment
   
+  paid: (paid) ->
+    @_paid = !!paid if paid?
+    @_paid
+  
   date: (date) ->
-    @_date = new Date Date.parse(date) if date?
+    @_date = new Date Date.parseDB(date) if date?
     @_date
 
   tickets: (tickets) ->
     @_tickets = parseInt tickets, 10 if tickets?
     @_tickets
+    
+  amount: (amount) ->
+    @_amount = parseInt amount, 10 if amount?
+    @_amount
     
   show: ->
     Show.find @show_id()
@@ -50,5 +58,20 @@ class window.Booking extends Spine.Model
     @_total ? (@show().price() * @tickets())
     
   toJSON: ->
-    $.extend {}, super,
+    json = super
+    $.extend {}, json,
       date: @date()?.db()
+
+  @fetchSummary: ->
+    promise = $.Deferred()
+    $.getJSON("/bookings").done (data) ->
+      Show.refresh data.shows
+      promise.resolve()
+    promise
+    
+  @partition: ->
+    @all().reduce(
+      (hash, booking) ->
+        (hash[booking.date().db()] ?= []).push(booking) && hash
+      {}
+    )

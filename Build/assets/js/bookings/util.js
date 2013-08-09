@@ -1,5 +1,9 @@
 (function() {
 
+  String.prototype.ucfirst = function() {
+    return this.substr(0, 1).toUpperCase() + this.substr(1);
+  };
+
   Number.prototype.pad = function(n) {
     var str;
     if (n == null) {
@@ -25,6 +29,24 @@
 
   Date.prototype.db = function() {
     return "" + (this.getFullYear()) + "-" + ((this.getMonth() + 1).pad()) + "-" + (this.getDate().pad()) + " " + (this.getHours().pad()) + ":" + (this.getMinutes().pad());
+  };
+
+  Date.parseDB = function(date) {
+    var p, parts;
+    if (typeof date !== "string") {
+      return date;
+    }
+    parts = (function() {
+      var _i, _len, _ref, _results;
+      _ref = date.split(/[^\d]+/);
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        p = _ref[_i];
+        _results.push(parseInt(p, 10));
+      }
+      return _results;
+    })();
+    return new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4]);
   };
 
   Date.prototype.label = function() {

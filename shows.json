@@ -19,11 +19,12 @@
   
   "venues" : [
     {
-      "id"      : "malthouse",
-      "name"    : "The Malthouse",
-      "address" : "71 Colombo Street, Christchurch",
-      "geo"     : [ -43.560974, 172.636555 ],
-      "phone"   : "03 332 3271"
+      "id"       : "malthouse",
+      "name"     : "The Malthouse",
+      "address"  : "71 Colombo Street, Christchurch",
+      "geo"      : [ -43.560974, 172.636555 ],
+      "phone"    : "03 332 3271",
+      "capacity" : 90
     }
   ]
 }
