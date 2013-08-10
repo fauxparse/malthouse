@@ -79,7 +79,7 @@
 
     Show.fetch = function() {
       var _this = this;
-      return $.getJSON("/shows").done(function(data) {
+      return $.getJSON("/shows").done(function(data, textStatus, xhr) {
         Venue.refresh(data.venues);
         return Show.refresh(data.shows);
       });

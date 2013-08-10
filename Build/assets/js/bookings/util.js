@@ -65,6 +65,10 @@
     return setTimeout(callback, timeout);
   };
 
+  Spine.Controller.prototype.immediately = function(callback) {
+    return this.after(0, callback);
+  };
+
   Spine.Controller.prototype.every = function(interval, callback) {
     return setInterval(callback, interval);
   };

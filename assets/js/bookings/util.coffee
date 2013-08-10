@@ -39,5 +39,8 @@ Date::time = ->
 Spine.Controller::after = (timeout, callback) ->
   setTimeout callback, timeout
 
+Spine.Controller::immediately = (callback) ->
+  @after 0, callback
+
 Spine.Controller::every = (interval, callback) ->
   setInterval callback, interval

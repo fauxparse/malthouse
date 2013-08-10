@@ -19,12 +19,12 @@ app.get "/", (request, response) ->
   response.render "index.html"
   
 app.get "/shows", (request, response) ->
-  response.contentType "application/json; charset=utf8"
+  response.contentType "application/json;charset=utf-8"
   response.send JSON.stringify(shows: Show.all(), venues: Venue.all())
   
 app.get "/bookings", (request, response) ->
   if /^application\/json/.test request.headers.accept
-    response.contentType "application/json; charset=utf8"
+    response.contentType "application/json;charset=utf-8"
     response.send JSON.stringify(shows: Show.all())
   else
     response.render "bookings.html"
@@ -34,19 +34,19 @@ app.post "/bookings", (request, response) ->
   Booking.create attributes, (error, booking) ->
     console.log error if error
     sleep.sleep 1
-    response.contentType "application/json; charset=utf8"
+    response.contentType "application/json;charset=utf-8"
     response.send JSON.stringify(booking.toJSON())
     
 app.get "/bookings/:show", (request, response) ->
   if /^application\/json/.test request.headers.accept
-    response.contentType "application/json; charset=utf8"
+    response.contentType "application/json;charset=utf-8"
     Booking.forShow request.params.show, (error, bookings) ->
       response.send JSON.stringify(show: Show.find(request.params.show), bookings: bookings, venues: Show.DATA.venues)
   else
     response.render "bookings/show.html"
     
 app.put "/bookings/:id", (request, response) ->
-  response.contentType "application/json; charset=utf8"
+  response.contentType "application/json;charset=utf-8"
   Booking.findOne { id: request.params.id }, (error, booking) =>
     console.log error if error
     booking.update request.body, (error, booking) =>

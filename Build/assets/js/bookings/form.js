@@ -12,6 +12,7 @@
       this.success = __bind(this.success, this);
       this.hide = __bind(this.hide, this);
       this.show = __bind(this.show, this);
+      this.hidden = __bind(this.hidden, this);
       this.shown = __bind(this.shown, this);
       BookingForm.__super__.constructor.apply(this, arguments);
     }
@@ -45,7 +46,7 @@
     BookingForm.url = "/bookings";
 
     BookingForm.prototype.init = function() {
-      this.el.addClass("booking modal fade").on("shown.bs.modal", this.shown).on("hidden.bs.modal", this.release);
+      this.el.addClass("booking modal fade").on("shown.bs.modal", this.shown).on("hidden.bs.modal", this.hidden);
       this.append($("<div>", {
         "class": "modal-content"
       }));
@@ -56,6 +57,10 @@
 
     BookingForm.prototype.shown = function() {
       return this.$("[name=name]").focus();
+    };
+
+    BookingForm.prototype.hidden = function() {
+      return this.immediately(this.release);
     };
 
     BookingForm.prototype.render = function() {

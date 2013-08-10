@@ -99,3 +99,76 @@ header {
     text-align: right;
   }
 }
+
+@media print {
+  * { color: black !important; }
+
+  body {
+    font-size: 12pt;
+  }
+  
+  .progress {
+    display: none;
+  }
+  
+  .performance {
+    page-break-after: true;
+    
+    a[data-toggle] {
+      display: none;
+    }
+    
+    .collapse {
+      display: block;
+    }
+    
+    .booking {
+      border-top: 1px solid black;
+      padding-left: 0;
+      position: relative;
+      overflow: hidden;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.25em;
+        border: 1px solid black;
+        width: 1em;
+        height: 1em;
+        font-size: 1.5em;
+        line-height: 1em;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 0.125em;
+        box-sizing: border-box;
+      }
+      
+      &.paid:before {
+        content: "✔";
+      }
+      
+      > div {
+        border-top: none;
+        float: left;
+        width: 8%;
+        box-sizing: border-box;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        line-height: 1.5em;
+        vertical-align: middle;
+        
+        &:first-child {
+          padding-left: 1em;
+          width: 24%;
+        }
+        
+        &:nth-child(2) { width: 24%; }
+        
+        a:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

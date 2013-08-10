@@ -150,7 +150,7 @@ class window.BookingForm extends Spine.Controller
     @el
       .addClass("booking modal fade")
       .on("shown.bs.modal", @shown)
-      .on("hidden.bs.modal", @release)
+      .on("hidden.bs.modal", @hidden)
     @append $("<div>", "class": "modal-content")
     @dialog.wrap "<div class=\"modal-dialog\">"
     @render()
@@ -160,6 +160,9 @@ class window.BookingForm extends Spine.Controller
     
   shown: =>
     @$("[name=name]").focus()
+    
+  hidden: =>
+    @immediately @release
   
   render: ->
     show = @booking.show()

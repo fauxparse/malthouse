@@ -30,7 +30,6 @@ class window.Show extends Spine.Model
     Venue.find @_venue_id
 
   @fetch: ->
-    $.getJSON("/shows")
-      .done (data) =>
-        Venue.refresh data.venues
-        Show.refresh data.shows
+    $.getJSON("/shows").done (data, textStatus, xhr) =>
+      Venue.refresh data.venues
+      Show.refresh data.shows
