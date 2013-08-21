@@ -169,7 +169,6 @@
   moduleKeywords = ['included', 'extended'];
 
   Module = (function() {
-
     Module.include = function(obj) {
       var key, value, _ref;
       if (!obj) {
@@ -229,7 +228,6 @@
   })();
 
   Model = (function(_super) {
-
     __extends(Model, _super);
 
     Model.extend(Events);
@@ -830,7 +828,6 @@
   Model.prototype.off = Model.prototype.unbind;
 
   Controller = (function(_super) {
-
     __extends(Controller, _super);
 
     Controller.include(Events);
@@ -1064,13 +1061,13 @@
   Module.extend.call(Spine, Events);
 
   Module.create = Module.sub = Controller.create = Controller.sub = Model.sub = function(instances, statics) {
-    var Result;
+    var Result, _ref;
     Result = (function(_super) {
-
       __extends(Result, _super);
 
       function Result() {
-        Result.__super__.constructor.apply(this, arguments);
+        _ref = Result.__super__.constructor.apply(this, arguments);
+        return _ref;
       }
 
       return Result;
@@ -1089,16 +1086,16 @@
   };
 
   Model.setup = function(name, attributes) {
-    var Instance;
+    var Instance, _ref;
     if (attributes == null) {
       attributes = [];
     }
     Instance = (function(_super) {
-
       __extends(Instance, _super);
 
       function Instance() {
-        Instance.__super__.constructor.apply(this, arguments);
+        _ref = Instance.__super__.constructor.apply(this, arguments);
+        return _ref;
       }
 
       return Instance;

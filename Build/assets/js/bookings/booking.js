@@ -1,13 +1,14 @@
 (function() {
-  var __hasProp = {}.hasOwnProperty,
+  var _ref,
+    __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   window.Booking = (function(_super) {
-
     __extends(Booking, _super);
 
     function Booking() {
-      Booking.__super__.constructor.apply(this, arguments);
+      _ref = Booking.__super__.constructor.apply(this, arguments);
+      return _ref;
     }
 
     Booking.configure("Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount");
@@ -111,18 +112,18 @@
     };
 
     Booking.prototype.total = function(total) {
-      var _ref;
+      var _ref1;
       if (total != null) {
         this._total = total;
       }
-      return (_ref = this._total) != null ? _ref : this.show().price() * this.tickets();
+      return (_ref1 = this._total) != null ? _ref1 : this.show().price() * this.tickets();
     };
 
     Booking.prototype.toJSON = function() {
-      var json, _ref;
+      var json, _ref1;
       json = Booking.__super__.toJSON.apply(this, arguments);
       return $.extend({}, json, {
-        date: (_ref = this.date()) != null ? _ref.db() : void 0
+        date: (_ref1 = this.date()) != null ? _ref1.db() : void 0
       });
     };
 
@@ -138,8 +139,8 @@
 
     Booking.partition = function() {
       return this.all().reduce(function(hash, booking) {
-        var _name, _ref;
-        return ((_ref = hash[_name = booking.date().db()]) != null ? _ref : hash[_name] = []).push(booking) && hash;
+        var _name;
+        return (hash[_name = booking.date().db()] != null ? hash[_name = booking.date().db()] : hash[_name] = []).push(booking) && hash;
       }, {});
     };
 

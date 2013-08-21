@@ -1,5 +1,4 @@
 (function() {
-
   $(function() {
     return Booking.fetchSummary().done(function(data) {
       return Show.each(function(show) {

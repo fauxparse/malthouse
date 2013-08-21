@@ -1,11 +1,10 @@
 (function() {
-  var BookingsController,
+  var BookingsController, _ref,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   BookingsController = (function(_super) {
-
     __extends(BookingsController, _super);
 
     function BookingsController() {
@@ -14,7 +13,8 @@
       this.renderBooking = __bind(this.renderBooking, this);
       this.renderBookings = __bind(this.renderBookings, this);
       this.render = __bind(this.render, this);
-      BookingsController.__super__.constructor.apply(this, arguments);
+      _ref = BookingsController.__super__.constructor.apply(this, arguments);
+      return _ref;
     }
 
     BookingsController.SECTION = "    <section class=\"performance\">      <a href=\"#bookings-{{id}}\" data-toggle=\"collapse\">▶</a>      <header>        <div class=\"row\">          <div class=\"col-lg-12\"><h2></h2></div>        </div>        <div class=\"row\">          <div class=\"col-lg-9\">            <div class=\"progress\">              <div class=\"progress-bar progress-bar-danger\" style=\"width: 0%;\" rel=\"unpaid\"></div>              <div class=\"progress-bar progress-bar-success\" style=\"width: 0%;\" rel=\"paid\"></div>            </div>          </div>          <div class=\"stat col-lg-1\" rel=\"unpaid\"></div>          <div class=\"stat col-lg-1\" rel=\"paid\"></div>          <div class=\"stat col-lg-1\" rel=\"total\"></div>        </div>      </header>      <div class=\"collapse bookings\" id=\"bookings-{{id}}\">      </div>    </section>  ";
@@ -38,13 +38,13 @@
     };
 
     BookingsController.prototype.render = function(show) {
-      var date, id, section, _i, _len, _ref, _results;
+      var date, id, section, _i, _len, _ref1, _results;
       this.show = (typeof show.shift === "function" ? show.shift() : void 0) || show;
       $("h1").html("Bookings for <strong>" + (this.show.title()) + "</strong>");
-      _ref = this.show.dates();
+      _ref1 = this.show.dates();
       _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        date = _ref[_i];
+      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+        date = _ref1[_i];
         id = date.db().replace(/[^\d]+/g, "-");
         _results.push(section = $(Milk.render(this.constructor.SECTION, {
           id: id
@@ -54,13 +54,13 @@
     };
 
     BookingsController.prototype.renderBookings = function(bookings) {
-      var booking, key, list, section, _ref, _results;
+      var booking, key, list, section, _ref1, _results;
       this.updateHeader(this.$(".total"), bookings, this.show.dates().length * this.show.venue().capacity());
-      _ref = Booking.partition();
+      _ref1 = Booking.partition();
       _results = [];
-      for (key in _ref) {
-        if (!__hasProp.call(_ref, key)) continue;
-        list = _ref[key];
+      for (key in _ref1) {
+        if (!__hasProp.call(_ref1, key)) continue;
+        list = _ref1[key];
         section = $("section[data-date='" + key + "']");
         this.updateHeader(section, list, this.show.venue().capacity());
         _results.push((function() {
@@ -97,11 +97,11 @@
       var b;
       this.$("[data-reference='" + booking.id + "']").replaceWith(this.renderBooking(booking));
       this.updateHeader(this.$("[data-date='" + (booking.date().db()) + "']"), (function() {
-        var _i, _len, _ref, _results;
-        _ref = Booking.all();
+        var _i, _len, _ref1, _results;
+        _ref1 = Booking.all();
         _results = [];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          b = _ref[_i];
+        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+          b = _ref1[_i];
           if (b.date().getTime() === booking.date().getTime()) {
             _results.push(b);
           }

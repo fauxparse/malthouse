@@ -1,6 +1,6 @@
 @import url("http://hello.myfonts.net/count/26421d");
  
-@font-face {font-family: 'Populaire';src: url('fonts/26421D_0_0.eot');src: url('fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/26421D_0_0.woff') format('woff'),url('fonts/26421D_0_0.ttf') format('truetype');}
+@font-face {font-family: 'Populaire';src: url('../fonts/26421D_0_0.eot');src: url('../fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26421D_0_0.woff') format('woff'),url('../fonts/26421D_0_0.ttf') format('truetype');}
 
 $BLACK:  #222;
 $WHITE:  #f8f8f8;
@@ -67,20 +67,20 @@ section {
       
       a[rel="book"] {
         position: absolute;
-        left: 50%;
+        right: 0;
         bottom: 10px;
-        width: 25%;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: -12.5%;
-        @include populaire;
-        font-size: 200%;
-        line-height: 0.9em;
+        min-width: 20%;
+        
+        @media (max-width: 767px) {
+          left: 10px;
+          right: 10px;
+        }
       }
 
       .container {
         background: url(../img/splash/alice/title.png) no-repeat 50% 0;
         height: 384px;
+        position: relative;
 
         h2 {
           position: absolute;
@@ -91,21 +91,21 @@ section {
         h3,
         .dates,
         .times {
+          position: absolute;
+          right: 0;
           margin: 0;
-          font-size: 20px;
+          font-size: 18px;
           line-height: 32px;
           vertical-align: middle;
           font-weight: 100;
-        }
-      
-        .col-lg-4 {
-          padding-top: 128px;
           text-align: right;
-        
-          &.col-lg-offset-4 {
-            text-align: left;
-          }
         }
+        
+        h3 { top: 192px; }
+        
+        .dates { top: 256px; }
+        
+        .times { top: 288px; }
         
         @media (max-width: 767px) {
           h2, h3, .dates, .times {
@@ -114,6 +114,27 @@ section {
         }
       }
     }
+  }
+  
+  .ribbon {
+    background-color: $GREEN;
+    overflow: hidden;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.5em 3.5em;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    z-index: 1000;
+    left: -3em;
+    top: 2.5em;
+    text-transform: uppercase;
+    transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -137,9 +158,15 @@ nav {
         line-height: 48px;
         vertical-align: middle;
         border-bottom: 1px solid #ccc;
+        padding: 0;
         &:hover {
           color: $PINK;
+          background: none;
         }
+      }
+      
+      &.active a {
+        color: $PINK;
       }
       
       p {
@@ -148,6 +175,10 @@ nav {
       }
     }
   }
+}
+
+#home .navigation a[rel="top"] {
+  display: none;
 }
 
 .top-navigation {
@@ -183,7 +214,7 @@ nav {
         content: "";
         position: absolute;
         top: -8px;
-        left: 8px;
+        left: 32px;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
         border-bottom: 8px solid rgba(0, 0, 0, 0.85);
@@ -193,6 +224,15 @@ nav {
     &:hover p {
       display: block;
     }
+  }
+  
+  a[rel="top"] {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    text-decoration: none;
+    line-height: 2em;
+    vertical-align: middle;
   }
   
   @media (max-width: 1023px) {
@@ -212,6 +252,8 @@ nav {
         display: none;
       }
     }
+    
+    a[rel="top"] { top: 0; }
   }
 }
 
@@ -280,7 +322,7 @@ nav {
 
     @media (max-width: 1023px) {
       margin: 20px -10px;
-      .col-lg-3 {
+      .col-sm-3 {
         float: left;
         width: 25%;
         padding: 10px;
@@ -353,6 +395,47 @@ nav {
   }
 }
 
+#contact {
+  .map {
+    position: relative;
+    
+    .canvas {
+      height: 200px;
+      margin-bottom: 20px;
+    }
+    
+    > a {
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .vcard {
+    .fn,
+    .email,
+    .tel .value {
+      font-weight: bold;
+    }
+    
+    [rel=facebook] {
+      font-weight: bold;
+      display: block;
+    }
+  }
+}
+
+footer {
+  color: #999;
+  padding-bottom: 6em;
+  
+  .container {
+    padding-top: 0.5em;
+    border-top: 1px solid #ccc;
+  }
+}
+
 .costumes-website {
   position: fixed;
   left: 0;
@@ -360,7 +443,7 @@ nav {
   bottom: 0;
   background: $BLACK;
   color: #ccc;
-  padding: 1em 40px 1em 20px;
+  padding: 1em 20px;
   
   p {
     margin: 0;
@@ -424,23 +507,6 @@ nav {
       font-size: 200%;
     }
   }
-}
-
-@mixin button($base) {
-  background-color: $base;
-  border-color: darken($base, 10%);
-  &:hover, &:active, &:focus {
-    background-color: lighten($base, 10%);
-    border-color: $base;
-  }
-}
-
-.btn-info {
-  @include button($BLUE);
-}
-
-.btn-success {
-  @include button($GREEN);
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {

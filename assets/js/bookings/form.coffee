@@ -9,9 +9,9 @@ class window.BookingForm extends Spine.Controller
         <div class=\"modal-body\">
           <form class=\"form-horizontal\">
             <div class=\"form-group\" rel=\"shows\">
-              <label class=\"col-lg-4 control-label\">Choose a show</label>
+              <label class=\"col-sm-4 control-label\">Choose a show</label>
               <input type=\"hidden\" name=\"show_id\" value=\"\">
-              <div class=\"col-lg-8\">
+              <div class=\"col-sm-8\">
                 <div class=\"btn-group btn-block\">
                   <button type=\"button\" class=\"btn btn-default dropdown-toggle btn-block btn-info\" data-toggle=\"dropdown\">
                     <span class=\"current\">{{show}}</span> <span class=\"caret\"></span>
@@ -25,9 +25,9 @@ class window.BookingForm extends Spine.Controller
               </div>
             </div>
             <div class=\"form-group\" rel=\"performances\">
-              <label class=\"col-lg-4 control-label\">Choose a performance</label>
+              <label class=\"col-sm-4 control-label\">Choose a performance</label>
               <input type=\"hidden\" name=\"date\" value=\"\">
-              <div class=\"col-lg-8\">
+              <div class=\"col-sm-8\">
                 <div class=\"btn-group btn-block\">
                   <button type=\"button\" class=\"btn btn-default dropdown-toggle btn-block btn-info\" data-toggle=\"dropdown\">
                     <span class=\"current\">{{date}}</span> <span class=\"caret\"></span>
@@ -41,8 +41,8 @@ class window.BookingForm extends Spine.Controller
               </div>
             </div>
             <div class=\"form-group\">
-              <label class=\"col-lg-4 control-label\">Number of tickets</label>
-              <div class=\"col-lg-3\">
+              <label class=\"col-sm-4 control-label\">Number of tickets</label>
+              <div class=\"col-sm-3\">
                 <div class=\"input-group\">
                   <span class=\"input-group-btn\">
                     <button class=\"btn btn-default\" type=\"button\" rel=\"minus\">-</button>
@@ -53,31 +53,31 @@ class window.BookingForm extends Spine.Controller
                   </span>
                 </div>
               </div>
-              <div class=\"col-lg-5 ticket-pricing\">
+              <div class=\"col-sm-5 ticket-pricing\">
                 &times; <span class=\"ticket-price\">$7</span> = <span class=\"total-price\">$14</span>
               </div>
             </div>
             <div class=\"form-group\">
-              <label class=\"col-lg-4 control-label\">Your name</label>
-              <div class=\"col-lg-8\">
+              <label class=\"col-sm-4 control-label\">Your name</label>
+              <div class=\"col-sm-8\">
                 <input type=\"text\" name=\"name\" class=\"form-control\">
               </div>
             </div>
             <div class=\"form-group\">
-              <label class=\"col-lg-4 control-label\">Your email</label>
-              <div class=\"col-lg-8\">
+              <label class=\"col-sm-4 control-label\">Your email</label>
+              <div class=\"col-sm-8\">
                 <input type=\"email\" name=\"email\" class=\"form-control\">
               </div>
             </div>
             <div class=\"form-group\">
-              <label class=\"col-lg-4 control-label\">Your phone number</label>
-              <div class=\"col-lg-8\">
+              <label class=\"col-sm-4 control-label\">Your phone number</label>
+              <div class=\"col-sm-8\">
                 <input type=\"phone\" name=\"phone\" class=\"form-control\">
               </div>
             </div>
             <div class=\"form-group\">
-              <label class=\"col-lg-4 control-label\">Payment method</label>
-              <div class=\"col-lg-8\">
+              <label class=\"col-sm-4 control-label\">Payment method</label>
+              <div class=\"col-sm-8\">
                 <div class=\"radio\">
                   <label>
                     <input type=\"radio\" name=\"payment\" value=\"internet\" checked>

@@ -1,13 +1,14 @@
 (function() {
-  var __hasProp = {}.hasOwnProperty,
+  var _ref, _ref1,
+    __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   window.Venue = (function(_super) {
-
     __extends(Venue, _super);
 
     function Venue() {
-      Venue.__super__.constructor.apply(this, arguments);
+      _ref = Venue.__super__.constructor.apply(this, arguments);
+      return _ref;
     }
 
     Venue.configure("Venue", "name", "address", "phone", "geo", "capacity");
@@ -24,11 +25,11 @@
   })(Spine.Model);
 
   window.Show = (function(_super) {
-
     __extends(Show, _super);
 
     function Show() {
-      Show.__super__.constructor.apply(this, arguments);
+      _ref1 = Show.__super__.constructor.apply(this, arguments);
+      return _ref1;
     }
 
     Show.configure("Show", "title", "byline", "dates", "venue", "price");

@@ -1,8 +1,8 @@
 @import url("http://hello.myfonts.net/count/26421d");
 @font-face {
   font-family: 'Populaire';
-  src: url(fonts/26421D_0_0.eot);
-  src: url(fonts/26421D_0_0.eot?#iefix) format("embedded-opentype"), url(fonts/26421D_0_0.woff) format("woff"), url(fonts/26421D_0_0.ttf) format("truetype"); }
+  src: url(../fonts/26421D_0_0.eot);
+  src: url(../fonts/26421D_0_0.eot?#iefix) format("embedded-opentype"), url(../fonts/26421D_0_0.woff) format("woff"), url(../fonts/26421D_0_0.ttf) format("truetype"); }
 
 html {
   height: 100%; }
@@ -47,18 +47,17 @@ section {
       color: white; }
       #next .show.alice a[rel="book"] {
         position: absolute;
-        left: 50%;
+        right: 0;
         bottom: 10px;
-        width: 25%;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: -12.5%;
-        font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 200%;
-        line-height: 0.9em; }
+        min-width: 20%; }
+        @media (max-width: 767px) {
+          #next .show.alice a[rel="book"] {
+            left: 10px;
+            right: 10px; } }
       #next .show.alice .container {
         background: url(../img/splash/alice/title.png) no-repeat 50% 0;
-        height: 384px; }
+        height: 384px;
+        position: relative; }
         #next .show.alice .container h2 {
           position: absolute;
           left: 0;
@@ -66,19 +65,42 @@ section {
         #next .show.alice .container h3,
         #next .show.alice .container .dates,
         #next .show.alice .container .times {
+          position: absolute;
+          right: 0;
           margin: 0;
-          font-size: 20px;
+          font-size: 18px;
           line-height: 32px;
           vertical-align: middle;
-          font-weight: 100; }
-        #next .show.alice .container .col-lg-4 {
-          padding-top: 128px;
+          font-weight: 100;
           text-align: right; }
-          #next .show.alice .container .col-lg-4.col-lg-offset-4 {
-            text-align: left; }
+        #next .show.alice .container h3 {
+          top: 192px; }
+        #next .show.alice .container .dates {
+          top: 256px; }
+        #next .show.alice .container .times {
+          top: 288px; }
         @media (max-width: 767px) {
           #next .show.alice .container h2, #next .show.alice .container h3, #next .show.alice .container .dates, #next .show.alice .container .times {
             display: none; } }
+  #next .ribbon {
+    background-color: #8dc63f;
+    overflow: hidden;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.5em 3.5em;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    z-index: 1000;
+    left: -3em;
+    top: 2.5em;
+    text-transform: uppercase;
+    transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); }
 
 nav ul {
   list-style: none;
@@ -96,12 +118,19 @@ nav ul {
       text-decoration: none;
       line-height: 48px;
       vertical-align: middle;
-      border-bottom: 1px solid #ccc; }
+      border-bottom: 1px solid #ccc;
+      padding: 0; }
       nav ul li a.section:hover {
-        color: #ec008c; }
+        color: #ec008c;
+        background: none; }
+    nav ul li.active a {
+      color: #ec008c; }
     nav ul li p {
       font-size: 1.142857143em;
       margin: 0.25em 0 1em; }
+
+#home .navigation a[rel="top"] {
+  display: none; }
 
 .top-navigation {
   position: fixed;
@@ -131,12 +160,19 @@ nav ul {
         content: "";
         position: absolute;
         top: -8px;
-        left: 8px;
+        left: 32px;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
         border-bottom: 8px solid rgba(0, 0, 0, 0.85); }
     .top-navigation li:hover p {
       display: block; }
+  .top-navigation a[rel="top"] {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    text-decoration: none;
+    line-height: 2em;
+    vertical-align: middle; }
   @media (max-width: 1023px) {
     .top-navigation {
       padding: 0 15px; }
@@ -148,7 +184,9 @@ nav ul {
           font-size: 24px;
           line-height: 32px; }
         .top-navigation li:hover p {
-          display: none; } }
+          display: none; }
+      .top-navigation a[rel="top"] {
+        top: 0; } }
 
 #home {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
@@ -202,7 +240,7 @@ nav ul {
     @media (max-width: 1023px) {
       #shows .recent-shows {
         margin: 20px -10px; }
-        #shows .recent-shows .col-lg-3 {
+        #shows .recent-shows .col-sm-3 {
           float: left;
           width: 25%;
           padding: 10px;
@@ -253,6 +291,31 @@ nav ul {
       line-height: 20px;
       margin: 0 0 0 1em; }
 
+#contact .map {
+  position: relative; }
+  #contact .map .canvas {
+    height: 200px;
+    margin-bottom: 20px; }
+  #contact .map > a {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    margin-bottom: 10px; }
+#contact .vcard .fn,
+#contact .vcard .email,
+#contact .vcard .tel .value {
+  font-weight: bold; }
+#contact .vcard [rel=facebook] {
+  font-weight: bold;
+  display: block; }
+
+footer {
+  color: #999;
+  padding-bottom: 6em; }
+  footer .container {
+    padding-top: 0.5em;
+    border-top: 1px solid #ccc; }
+
 .costumes-website {
   position: fixed;
   left: 0;
@@ -260,7 +323,7 @@ nav ul {
   bottom: 0;
   background: #222222;
   color: #ccc;
-  padding: 1em 40px 1em 20px; }
+  padding: 1em 20px; }
   .costumes-website p {
     margin: 0;
     text-shadow: 0 -1px 0 black; }
@@ -310,20 +373,6 @@ nav ul {
     margin-top: 72px;
     font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 200%; }
-
-.btn-info {
-  background-color: #00aeef;
-  border-color: #0089bc; }
-  .btn-info:hover, .btn-info:active, .btn-info:focus {
-    background-color: #23c3ff;
-    border-color: #00aeef; }
-
-.btn-success {
-  background-color: #8dc63f;
-  border-color: #72a230; }
-  .btn-success:hover, .btn-success:active, .btn-success:focus {
-    background-color: #a4d266;
-    border-color: #8dc63f; }
 
 @media (max-width: 767px) {
   body {

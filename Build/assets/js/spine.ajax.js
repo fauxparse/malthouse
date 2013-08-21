@@ -47,11 +47,13 @@
     },
     enabled: true,
     disable: function(callback) {
+      var e;
       if (this.enabled) {
         this.enabled = false;
         try {
           return callback();
-        } catch (e) {
+        } catch (_error) {
+          e = _error;
           throw e;
         } finally {
           this.enabled = true;
@@ -73,7 +75,6 @@
   };
 
   Base = (function() {
-
     function Base() {}
 
     Base.prototype.defaults = {
@@ -127,7 +128,6 @@
   })();
 
   Collection = (function(_super) {
-
     __extends(Collection, _super);
 
     function Collection(model) {
@@ -188,7 +188,6 @@
   })(Base);
 
   Singleton = (function(_super) {
-
     __extends(Singleton, _super);
 
     function Singleton(record) {
