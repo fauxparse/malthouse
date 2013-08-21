@@ -20,16 +20,16 @@ header {
     font-size: 200%;
     line-height: 1em;
     margin: 0.25em 0; }
-  header .col-lg-1 {
+  header .col-xs-1 {
     text-align: right; }
   header .row:first-child div {
     border-top: 1px solid black; }
-    header .row:first-child div.col-lg-1 {
+    header .row:first-child div.col-xs-1 {
       padding-top: 1.25em; }
 
 .total header .row:first-child div {
   border-top: none; }
-  .total header .row:first-child div.col-lg-1 {
+  .total header .row:first-child div.col-xs-1 {
     padding-top: 2em; }
 
 .performance {
@@ -50,68 +50,47 @@ header {
     -moz-transform: rotate(90deg);
     transform: rotate(90deg); }
 
-.booking [class*=col-lg] {
+.booking [class*=col-xs] {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-top: 1px solid #ccc; }
-  .booking [class*=col-lg]:first-child {
+  .booking [class*=col-xs]:first-child {
     margin-left: 15px;
     margin-right: -15px;
     padding-left: 0;
     padding-right: 0; }
-.booking .col-lg-1 {
+.booking .col-xs-1 {
   text-align: right; }
+.booking .email {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .booking .email:after {
+    display: none; }
 
 @media print {
   * {
     color: black !important; }
 
   body {
-    font-size: 12pt; }
+    font-size: 11pt; }
+
+  a[data-toggle] {
+    display: none; }
+
+  .collapse {
+    display: block !important;
+    height: auto !important; }
 
   .progress {
     display: none; }
 
   .performance {
-    page-break-after: true; }
-    .performance a[data-toggle] {
-      display: none; }
-    .performance .collapse {
-      display: block; }
-    .performance .booking {
-      border-top: 1px solid black;
-      padding-left: 0;
-      position: relative;
-      overflow: hidden; }
-      .performance .booking:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.25em;
-        border: 1px solid black;
-        width: 1em;
-        height: 1em;
-        font-size: 1.5em;
-        line-height: 1em;
-        vertical-align: middle;
-        text-align: center;
-        border-radius: 0.125em;
-        box-sizing: border-box; }
-      .performance .booking.paid:before {
-        content: "✔"; }
-      .performance .booking > div {
-        border-top: none;
-        float: left;
-        width: 8%;
-        box-sizing: border-box;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-        line-height: 1.5em;
-        vertical-align: middle; }
-        .performance .booking > div:first-child {
-          padding-left: 1em;
-          width: 24%; }
-        .performance .booking > div:nth-child(2) {
-          width: 24%; }
-        .performance .booking > div a:after {
-          display: none; } }
+    page-break-inside: avoid; }
+
+  .booking .btn-success {
+    background: black !important;
+    border-color: black !important;
+    color: white !important; } }

@@ -33,14 +33,14 @@ header {
     margin: 0.25em 0;
   }
 
-  .col-lg-1 {
+  .col-xs-1 {
     text-align: right;
   }
   
   .row:first-child div {
     border-top: 1px solid black;
     
-    &.col-lg-1 {
+    &.col-xs-1 {
       padding-top: 1.25em;
     }
   }
@@ -52,7 +52,7 @@ header {
   .row:first-child div {
     border-top: none;
 
-    &.col-lg-1 {
+    &.col-xs-1 {
       padding-top: 2em;
     }
   }
@@ -83,7 +83,7 @@ header {
 }
 
 .booking {
-  [class*=col-lg] {
+  [class*=col-xs] {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-top: 1px solid #ccc;
@@ -95,80 +95,48 @@ header {
     }
   }
   
-  .col-lg-1 {
+  .col-xs-1 {
     text-align: right;
+  }
+  
+  .email {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:after { display: none; }
   }
 }
 
 @media print {
   * { color: black !important; }
-
+  
   body {
-    font-size: 12pt;
+    font-size: 11pt;
   }
   
+  a[data-toggle] { display: none; }
+  
+  .collapse {
+    display: block !important;
+    height: auto !important;
+  }
+
   .progress {
     display: none;
   }
   
   .performance {
-    page-break-after: true;
-    
-    a[data-toggle] {
-      display: none;
-    }
-    
-    .collapse {
-      display: block;
-    }
-    
-    .booking {
-      border-top: 1px solid black;
-      padding-left: 0;
-      position: relative;
-      overflow: hidden;
-      
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.25em;
-        border: 1px solid black;
-        width: 1em;
-        height: 1em;
-        font-size: 1.5em;
-        line-height: 1em;
-        vertical-align: middle;
-        text-align: center;
-        border-radius: 0.125em;
-        box-sizing: border-box;
-      }
-      
-      &.paid:before {
-        content: "✔";
-      }
-      
-      > div {
-        border-top: none;
-        float: left;
-        width: 8%;
-        box-sizing: border-box;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
-        line-height: 1.5em;
-        vertical-align: middle;
-        
-        &:first-child {
-          padding-left: 1em;
-          width: 24%;
-        }
-        
-        &:nth-child(2) { width: 24%; }
-        
-        a:after {
-          display: none;
-        }
-      }
+    page-break-inside: avoid;
+  }
+  
+  .booking {
+    .btn-success {
+      background: black !important;
+      border-color: black !important;
+      color: white !important;
     }
   }
+  
 }

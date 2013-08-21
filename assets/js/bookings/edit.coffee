@@ -1,21 +1,21 @@
 class BookingsController extends Spine.Controller
   @SECTION = "
     <section class=\"performance\">
-      <a href=\"#bookings-{{id}}\" data-toggle=\"collapse\">▶</a>
+      <a href=\"#bookings-{{id}}\" data-toggle=\"collapse\"><span class=\"glyphicon glyphicon-play\"></span></a>
       <header>
         <div class=\"row\">
-          <div class=\"col-lg-12\"><h2></h2></div>
+          <div class=\"col-xs-12\"><h2></h2></div>
         </div>
         <div class=\"row\">
-          <div class=\"col-lg-9\">
+          <div class=\"col-xs-9\">
             <div class=\"progress\">
               <div class=\"progress-bar progress-bar-danger\" style=\"width: 0%;\" rel=\"unpaid\"></div>
               <div class=\"progress-bar progress-bar-success\" style=\"width: 0%;\" rel=\"paid\"></div>
             </div>
           </div>
-          <div class=\"stat col-lg-1\" rel=\"unpaid\"></div>
-          <div class=\"stat col-lg-1\" rel=\"paid\"></div>
-          <div class=\"stat col-lg-1\" rel=\"total\"></div>
+          <div class=\"stat col-xs-1\" rel=\"unpaid\"></div>
+          <div class=\"stat col-xs-1\" rel=\"paid\"></div>
+          <div class=\"stat col-xs-1\" rel=\"total\"></div>
         </div>
       </header>
       <div class=\"collapse bookings\" id=\"bookings-{{id}}\">
@@ -25,22 +25,22 @@ class BookingsController extends Spine.Controller
   
   @BOOKING = "
     <div class=\"row booking\" data-reference=\"{{id}\">
-      <div class=\"col-lg-3\">
+      <div class=\"col-xs-3\">
         <div class=\"reference\">{{id}}</div>
         <div class=\"name\">{{name}}</div>
       </div>
-      <div class=\"col-lg-3\">
+      <div class=\"col-xs-3\">
         {{#email}}<a class=\"email\" href=\"mailto:{{email}}\">{{email}}</a>{{/email}}
         <div class=\"phone\">{{phone}}</div>
       </div>
-      <div class=\"col-lg-1\">
+      <div class=\"col-xs-1\">
         <div class=\"payment\">{{payment}}</div>
         <div class=\"amount\">{{amount}}</div>
       </div>
-      <div class=\"col-lg-2\"><button class=\"btn btn-default btn-block\">Unpaid</button></div>
-      <div class=\"stat col-lg-1\" rel=\"unpaid\">{{unpaid}}</div>
-      <div class=\"stat col-lg-1\" rel=\"paid\">{{paid}}</div>
-      <div class=\"stat col-lg-1\" rel=\"total\">{{total}}</div>
+      <div class=\"col-xs-2\"><button class=\"btn btn-default btn-block\">Unpaid</button></div>
+      <div class=\"stat col-xs-1\" rel=\"unpaid\">{{unpaid}}</div>
+      <div class=\"stat col-xs-1\" rel=\"paid\">{{paid}}</div>
+      <div class=\"stat col-xs-1\" rel=\"total\">{{total}}</div>
     </div>
   "
   
@@ -109,7 +109,7 @@ class BookingsController extends Spine.Controller
       stats.paid   +=  +booking.paid() * booking.tickets()
       stats.total  += booking.tickets()
     for own key, value of stats
-      $("header .stat[rel=#{key}]", section).text value or ""
+      $("header .stat[rel=#{key}]", section).html value or "&nbsp;"
       $("header .progress-bar[rel=#{key}]", section).animate(width: "#{value * 100.0 / max}%")
       
   open: (e) ->
