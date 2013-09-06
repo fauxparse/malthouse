@@ -1,18 +1,21 @@
 {
   "name": "malthouse",
-  "description"     : "Canterbury Children’s Theatre website",
-  "author"          : "Matt Powell <fauxparse@gmail.com>",
-  "version"         : "0.0.1",
+  "description": "Canterbury Children’s Theatre website",
+  "author": "Matt Powell <fauxparse@gmail.com>",
+  "version": "0.0.1",
   "engines": {
-    "node"          : "0.10.x",
-    "npm"           : "1.2.x"
+    "node": "0.10.x",
+    "npm": "1.2.x"
   },
   "dependencies": {
-    "coffee-script" : "*",
-    "express"       : "3.x",
-    "ejs"           : "*",
-    "spine"         : "*",
-    "sleep"         : "*",
-    "mongojs"       : "*"
+    "coffee-script": "*",
+    "express": "3.x",
+    "ejs": "*",
+    "spine": "*",
+    "sleep": "*",
+    "mongojs": "*",
+    "sendgrid": "*",
+    "lodash": "~1.3.1",
+    "mu2": "~0.5.19"
   }
 }

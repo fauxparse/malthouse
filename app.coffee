@@ -1,10 +1,11 @@
 express = require "express"
 app = express()
 
-Show = require "./lib/models/show"
-Venue = require "./lib/models/venue"
+Show    = require "./lib/models/show"
+Venue   = require "./lib/models/venue"
 Booking = require "./lib/models/booking"
-sleep = require "sleep"
+Mailer  = require "./lib/models/mailer"
+sleep   = require "sleep"
 
 PORT = process.env.PORT || 5000
 
@@ -33,6 +34,7 @@ app.post "/bookings", (request, response) ->
   attributes = request.body
   Booking.create attributes, (error, booking) ->
     console.log error if error
+    Mailer.sendBookingConfirmation booking
     sleep.sleep 1
     response.contentType "application/json;charset=utf-8"
     response.send JSON.stringify(booking.toJSON())

@@ -28,6 +28,9 @@ class Booking extends Model
   @forShow: (show, callback) ->
     @collection().find { show_id: show }, (err, docs) =>
       callback null, (new Booking(attrs) for attrs in docs)
+      
+  @created: (booking) =>
+    Mailer.sendBookingConfirmation booking
 
 Booking.collection().ensureIndex "id", unique: true
 Booking.collection().ensureIndex show_id: 1, date: 1

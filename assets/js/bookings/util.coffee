@@ -35,12 +35,13 @@ Date::date = ->
 
 Date::time = ->
   "#{((@getHours() - 1) % 12 + 1)}:#{@getMinutes().pad()}#{if @getHours() < 12 then "am" else "pm"}"
-  
-Spine.Controller::after = (timeout, callback) ->
-  setTimeout callback, timeout
 
-Spine.Controller::immediately = (callback) ->
-  @after 0, callback
+if Spine?  
+  Spine.Controller::after = (timeout, callback) ->
+    setTimeout callback, timeout
 
-Spine.Controller::every = (interval, callback) ->
-  setInterval callback, interval
+  Spine.Controller::immediately = (callback) ->
+    @after 0, callback
+
+  Spine.Controller::every = (interval, callback) ->
+    setInterval callback, interval

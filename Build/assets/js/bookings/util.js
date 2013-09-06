@@ -60,16 +60,16 @@
     return "" + ((this.getHours() - 1) % 12 + 1) + ":" + (this.getMinutes().pad()) + (this.getHours() < 12 ? "am" : "pm");
   };
 
-  Spine.Controller.prototype.after = function(timeout, callback) {
-    return setTimeout(callback, timeout);
-  };
-
-  Spine.Controller.prototype.immediately = function(callback) {
-    return this.after(0, callback);
-  };
-
-  Spine.Controller.prototype.every = function(interval, callback) {
-    return setInterval(callback, interval);
-  };
+  if (typeof Spine !== "undefined" && Spine !== null) {
+    Spine.Controller.prototype.after = function(timeout, callback) {
+      return setTimeout(callback, timeout);
+    };
+    Spine.Controller.prototype.immediately = function(callback) {
+      return this.after(0, callback);
+    };
+    Spine.Controller.prototype.every = function(interval, callback) {
+      return setInterval(callback, interval);
+    };
+  }
 
 }).call(this);
