@@ -9,10 +9,9 @@ SendGrid = require "sendgrid"
 
 class Mailer
   @DEFAULTS:
-    # from: "bookings@malthouse.co.nz"
-    from:     "fauxparse@gmail.com"
+    from:     "malthouse.bookings@gmail.com"
     fromname: "Canterbury Children’s Theatre"
-    to:       "fauxparse@gmail.com"
+    to:       "malthouse.bookings@gmail.com"
   
   @mailer: ->
     @sendgrid or= new SendGrid(
