@@ -111,7 +111,7 @@ class window.BookingForm extends Spine.Controller
     <blockquote>
       <p>
         Canterbury Children’s Theatre Inc<br>
-        XX-XXXX-XXXXXXX-XXX
+        03-1594-0586102-00
       <p>
     </blockquote>
     {{/internetBanking}}

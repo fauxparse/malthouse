@@ -8,31 +8,8 @@
   <meta http-equiv="x-ua-compatible" content="IE=edge">
   
   
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
   
-  <link rel='stylesheet' href='assets/bootstrap/bootstrap.min.css'>
-<link rel='stylesheet' href='assets/css/style.css'>
+  <link rel='stylesheet' href='56151adc802a1dbf2706e3d470ee6a34.css'>
   
   <link href="assets/favicon.ico" rel="shortcut icon">
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
@@ -707,17 +684,8 @@
   </div>
   
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc0T3MVTjXxHqdKHQQU92fSqG2ry-B1AM&sensor=false"></script>
-  <script src='assets/js/jquery.js'></script>
-<script src='assets/js/jquery.smooth-scroll.min.js'></script>
-<script src='assets/js/spine.js'></script>
-<script src='assets/js/spine.ajax.js'></script>
-<script src='assets/bootstrap/bootstrap.min.js'></script>
-<script src='assets/js/milk.js'></script>
-  <script src='assets/js/bookings/util.js'></script>
-<script src='assets/js/bookings/show.js'></script>
-<script src='assets/js/bookings/booking.js'></script>
-<script src='assets/js/bookings/form.js'></script>
-<script src='assets/js/app.js'></script>
+  <script src='d9e36c75b88bc3054811db474a9944af.js'></script>
+  <script src='773137dbc3e61e68afc2c63dd1f424d5.js'></script>
   
 </body>
 

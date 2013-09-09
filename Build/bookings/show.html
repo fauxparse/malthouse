@@ -7,31 +7,8 @@
   <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
   
   
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
   
-  <link rel='stylesheet' href='../assets/bootstrap/bootstrap.min.css'>
-<link rel='stylesheet' href='../assets/css/bookings.css'>
+  <link rel='stylesheet' href='../046a6ab5127a58ba6292b398f5d62a41.css'>
   
   <link href="../assets/favicon.ico" rel="shortcut icon">
   <link href="../assets/apple-touch-icon.png" rel="apple-touch-icon">
@@ -66,15 +43,8 @@
     </section>
   </div>
   
-  <script src='../assets/js/jquery-1.8.3.min.js'></script>
-<script src='../assets/js/spine.js'></script>
-<script src='../assets/js/spine.ajax.js'></script>
-<script src='../assets/bootstrap/bootstrap.min.js'></script>
-<script src='../assets/js/milk.js'></script>
-  <script src='../assets/js/bookings/util.js'></script>
-<script src='../assets/js/bookings/show.js'></script>
-<script src='../assets/js/bookings/booking.js'></script>
-<script src='../assets/js/bookings/edit.js'></script>
+  <script src='../c30175494654fc9569773568f98174da.js'></script>
+  <script src='../44c9d3e1599f808887a12c18f316eba5.js'></script>
 
 </body>
 
