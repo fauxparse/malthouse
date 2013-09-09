@@ -5,3 +5,4 @@ package.json
 shows.json
 node_modules/.bin/*
 lib
+old
