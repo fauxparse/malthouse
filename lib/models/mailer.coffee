@@ -39,6 +39,7 @@ class Mailer
       phone:           booking.phone
       email:           booking.email
       booking:         booking.id
+      comments:        booking.comments
       show:            show.title
       date:            date.date()
       time:            date.time()

@@ -26,7 +26,8 @@ app.get "/", (request, response) ->
   
 app.get "/shows", (request, response) ->
   response.contentType "application/json;charset=utf-8"
-  response.send JSON.stringify(shows: Show.all(), venues: Venue.all())
+  Show.bookings (error, bookings) ->
+    response.send JSON.stringify(shows: bookings, venues: Venue.all())
   
 app.get "/bookings", auth, (request, response) ->
   if /^application\/json/.test request.headers.accept

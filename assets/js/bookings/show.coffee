@@ -18,8 +18,17 @@ class window.Show extends Spine.Model
     
   dates: (dates) ->
     if dates?
-      @_dates = (new Date(Date.parseDB(date)) for date in dates)
-    (@_dates || []).slice 0
+      @_parsedDates = undefined
+      @_dates = $.extend {}, dates
+    @_dates || {}
+    
+  parsedDates: ->
+    unless @_parsedDates?
+      @_parsedDates = []
+      for own date, open of @dates()
+        @_parsedDates.push new Date(Date.parseDB(date))
+      @_parsedDates.sort()
+    @_parsedDates
     
   price: (price) ->
     @_price = parseInt(price, 10) if price?

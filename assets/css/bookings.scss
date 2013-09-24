@@ -77,6 +77,7 @@ header {
   &.open a[data-toggle] {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
   
@@ -106,6 +107,17 @@ header {
     text-overflow: ellipsis;
     white-space: nowrap;
     &:after { display: none; }
+  }
+  
+  .comments {
+    clear: left;
+    border: none;
+    padding-top: 0;
+    p {
+      margin: 0;
+      &::before { content: "“"; }
+      &::after  { content: "”"; }
+    }
   }
 }
 

@@ -156,7 +156,7 @@ nav ul {
       display: none;
       font-size: inherit;
       z-index: 1000; }
-      .top-navigation li p:before {
+      .top-navigation li p::before {
         content: "";
         position: absolute;
         top: -8px;
@@ -335,11 +335,24 @@ footer {
     color: #f8f8f8;
     text-shadow: none; }
 
+.modal-backdrop.fade.in {
+  opacity: 0.5; }
+
 .modal.booking .modal-title {
   font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #ec008c;
   font-size: 250%;
   line-height: 0.75em; }
+.modal.booking [rel="performances"] .dropdown-menu :disabled,
+.modal.booking [rel="performances"] .dropdown-menu .disabled {
+  text-decoration: line-through; }
+  .modal.booking [rel="performances"] .dropdown-menu :disabled::after,
+  .modal.booking [rel="performances"] .dropdown-menu .disabled::after {
+    float: right;
+    content: "CLOSED!";
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 0.25em; }
 .modal.booking .input-group input {
   text-align: center;
   padding-left: 4px;

@@ -1,5 +1,5 @@
 class window.Booking extends Spine.Model
-  @configure "Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount"
+  @configure "Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount", "comments"
   @extend Spine.Model.Ajax
   
   @EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ # meh, close enough
@@ -29,7 +29,7 @@ class window.Booking extends Spine.Model
     @_paid
   
   date: (date) ->
-    @_date = new Date Date.parseDB(date) if date?
+    @_date = new Date Date.parseDB(date) if date
     @_date
 
   tickets: (tickets) ->
@@ -46,7 +46,7 @@ class window.Booking extends Spine.Model
   validate: ->
     errors = {}
     errors.show_id = "Please select a show" unless @show_id()
-    errors.date = "Please select a performance" unless @date()
+    errors.date = "Please select a performance" unless @date() and @_date.getTime and !isNaN(@_date.getTime())
     errors.name = "Please fill in your name" unless @name()
     errors.email = "Please fill in your email address or phone number" unless @email() or @phone()
     errors.email = "Please check your email address" if @email() and !@email().match(@constructor.EMAIL)

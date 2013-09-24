@@ -3,14 +3,14 @@ Show = require "./show"
 
 class Booking extends Model
   @COLLECTION: "bookings"
-  @KEYS: [ "id", "show_id", "date", "name", "email", "phone", "tickets", "payment", "paid", "amount" ]
+  @KEYS: [ "id", "show_id", "date", "name", "email", "phone", "tickets", "payment", "paid", "amount", "comments" ]
   
   constructor: (attributes) ->
     @paid = false
     super
     @amount ?= @tickets * @show().price
     
-  show: -> Show.find @show_id
+  show: -> Booking.Show.find @show_id
   
   @reference: (show, callback) ->
     counters = @db().collection("counters")

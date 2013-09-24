@@ -18,7 +18,7 @@
       return _ref;
     }
 
-    BookingForm.template = "    <div class=\"modal-dialog\">      <div class=\"modal-content\">        <div class=\"modal-header\">          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>          <h4 class=\"modal-title\">Book tickets online</h4>        </div>        <div class=\"modal-body\">          <form class=\"form-horizontal\">            <div class=\"form-group\" rel=\"shows\">              <label class=\"col-sm-4 control-label\">Choose a show</label>              <input type=\"hidden\" name=\"show_id\" value=\"\">              <div class=\"col-sm-8\">                <div class=\"btn-group btn-block\">                  <button type=\"button\" class=\"btn btn-default dropdown-toggle btn-block btn-info\" data-toggle=\"dropdown\">                    <span class=\"current\">{{show}}</span> <span class=\"caret\"></span>                  </button>                  <ul class=\"dropdown-menu\">                    {{#shows}}                      <li><a href=\"#\" data-value=\"{{id}}\">{{title}}</a></li>                    {{/shows}}                  </ul>                </div>              </div>            </div>            <div class=\"form-group\" rel=\"performances\">              <label class=\"col-sm-4 control-label\">Choose a performance</label>              <input type=\"hidden\" name=\"date\" value=\"\">              <div class=\"col-sm-8\">                <div class=\"btn-group btn-block\">                  <button type=\"button\" class=\"btn btn-default dropdown-toggle btn-block btn-info\" data-toggle=\"dropdown\">                    <span class=\"current\">{{date}}</span> <span class=\"caret\"></span>                  </button>                  <ul class=\"dropdown-menu\">                    {{#dates}}                      <li><a href=\"#\" data-value=\"{{date}}\">{{label}}</a></li>                    {{/dates}}                  </ul>                </div>              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Number of tickets</label>              <div class=\"col-sm-3\">                <div class=\"input-group\">                  <span class=\"input-group-btn\">                    <button class=\"btn btn-default\" type=\"button\" rel=\"minus\">-</button>                  </span>                  <input type=\"text\" class=\"form-control\" name=\"tickets\" value=\"2\">                  <span class=\"input-group-btn\">                    <button class=\"btn btn-default\" type=\"button\" rel=\"plus\">+</button>                  </span>                </div>              </div>              <div class=\"col-sm-5 ticket-pricing\">                &times; <span class=\"ticket-price\">$7</span> = <span class=\"total-price\">$14</span>              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Your name</label>              <div class=\"col-sm-8\">                <input type=\"text\" name=\"name\" class=\"form-control\">              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Your email</label>              <div class=\"col-sm-8\">                <input type=\"email\" name=\"email\" class=\"form-control\">              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Your phone number</label>              <div class=\"col-sm-8\">                <input type=\"phone\" name=\"phone\" class=\"form-control\">              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Payment method</label>              <div class=\"col-sm-8\">                <div class=\"radio\">                  <label>                    <input type=\"radio\" name=\"payment\" value=\"internet\" checked>                    Internet banking                  </label>                </div>                <div class=\"radio\">                  <label>                    <input type=\"radio\" name=\"payment\" value=\"cash\">                    Cash on the door (sorry, no EFT-POS!)                  </label>                </div>              </div>            </div>          </form>          <div class=\"loading-overlay\" style=\"display: none;\"><h4>Processing booking…</h4></div>        </div>        <div class=\"modal-footer\">          <button type=\"button\" class=\"btn btn-default\" rel=\"cancel\" data-dismiss=\"modal\">Cancel</button>          <button type=\"button\" class=\"btn btn-success\" rel=\"submit\">Submit booking</button>        </div>      </div>    </div>    ";
+    BookingForm.template = "    <div class=\"modal-dialog\">      <div class=\"modal-content\">        <div class=\"modal-header\">          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>          <h4 class=\"modal-title\">Book tickets online</h4>        </div>        <div class=\"modal-body\">          <form class=\"form-horizontal\">            <div class=\"form-group\" rel=\"shows\">              <label class=\"col-sm-4 control-label\">Choose a show</label>              <input type=\"hidden\" name=\"show_id\" value=\"\">              <div class=\"col-sm-8\">                <div class=\"btn-group btn-block\">                  <button type=\"button\" class=\"btn btn-default dropdown-toggle btn-block btn-info\" data-toggle=\"dropdown\">                    <span class=\"current\">{{show}}</span> <span class=\"caret\"></span>                  </button>                  <ul class=\"dropdown-menu\">                    {{#shows}}                      <li><a href=\"#\" data-value=\"{{id}}\">{{title}}</a></li>                    {{/shows}}                  </ul>                </div>              </div>            </div>            <div class=\"form-group\" rel=\"performances\">              <label class=\"col-sm-4 control-label\">Choose a performance</label>              <input type=\"hidden\" name=\"date\" value=\"\">              <div class=\"col-sm-8\">                <div class=\"btn-group btn-block\">                  <button type=\"button\" class=\"btn btn-default dropdown-toggle btn-block btn-info\" data-toggle=\"dropdown\">                    <span class=\"current\">{{date}}</span> <span class=\"caret\"></span>                  </button>                  <ul class=\"dropdown-menu\">                    {{#dates}}                      <li><a href=\"#\" data-value=\"{{date}}\">{{label}}</a></li>                    {{/dates}}                  </ul>                </div>              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Number of tickets</label>              <div class=\"col-sm-3\">                <div class=\"input-group\">                  <span class=\"input-group-btn\">                    <button class=\"btn btn-default\" type=\"button\" rel=\"minus\">-</button>                  </span>                  <input type=\"text\" class=\"form-control\" name=\"tickets\" value=\"2\">                  <span class=\"input-group-btn\">                    <button class=\"btn btn-default\" type=\"button\" rel=\"plus\">+</button>                  </span>                </div>              </div>              <div class=\"col-sm-5 ticket-pricing\">                &times; <span class=\"ticket-price\">$7</span> = <span class=\"total-price\">$14</span>              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Your name</label>              <div class=\"col-sm-8\">                <input type=\"text\" name=\"name\" class=\"form-control\">              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Your email</label>              <div class=\"col-sm-8\">                <input type=\"email\" name=\"email\" class=\"form-control\">              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Your phone number</label>              <div class=\"col-sm-8\">                <input type=\"phone\" name=\"phone\" class=\"form-control\">              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Payment method</label>              <div class=\"col-sm-8\">                <div class=\"radio\">                  <label>                    <input type=\"radio\" name=\"payment\" value=\"internet\" checked>                    Internet banking                  </label>                </div>                <div class=\"radio\">                  <label>                    <input type=\"radio\" name=\"payment\" value=\"cash\">                    Cash on the door (sorry, no EFT-POS!)                  </label>                </div>              </div>            </div>            <div class=\"form-group\">              <label class=\"col-sm-4 control-label\">Other comments</label>              <div class=\"col-sm-8\">                <textarea name=\"comments\" class=\"form-control\" rows=\"3\"></textarea>              </div>            </div>          </form>          <div class=\"loading-overlay\" style=\"display: none;\"><h4>Processing booking…</h4></div>        </div>        <div class=\"modal-footer\">          <button type=\"button\" class=\"btn btn-default\" rel=\"cancel\" data-dismiss=\"modal\">Cancel</button>          <button type=\"button\" class=\"btn btn-success\" rel=\"submit\" disabled>Submit booking</button>        </div>      </div>    </div>    ";
 
     BookingForm.successTemplate = "    <h3>Thanks for booking!</h3>    <p>Your booking number is <strong>{{id}}</strong>.</p>    {{#internetBanking}}    <p>Please use this number as a reference when making your payment of <strong>{{total}}</strong>. Our account details are:</p>    <blockquote>      <p>        Canterbury Children’s Theatre Inc<br>        03-1594-0586102-00      <p>    </blockquote>    {{/internetBanking}}    {{^internetBanking}}    <p>Please bring <strong>{{total}}</strong> cash (or a cheque made out to Canterbury Children’s Theatre, Inc) to the performance with you. <strong>Sorry, we are unable to accept EFT-POS or credit cards at the theatre.</strong></p>    {{/internetBanking}}    {{#email}}    <p>We’ve emailed you a copy of this booking for your records, but you don’t need to bring it with you on the day.</p>    {{/email}}    <p>We’ll see you on <strong>{{date}}</strong>! The show starts at <strong>{{time}}</strong>, but please arrive around 15–20 minutes early.</p>    ";
 
@@ -64,22 +64,42 @@
       return this.immediately(this.release);
     };
 
+    BookingForm.prototype.day = function(date) {
+      date || (date = new Date);
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 4, 0);
+    };
+
+    BookingForm.prototype.isInFuture = function(date) {
+      return this.day(date) > this.day();
+    };
+
+    BookingForm.prototype.formatDate = function(date, open) {
+      var d;
+      if (open == null) {
+        open = true;
+      }
+      d = new Date(Date.parseDB(date));
+      return {
+        date: d.db(),
+        label: d.label(),
+        open: open && this.isInFuture(d)
+      };
+    };
+
+    BookingForm.prototype.formatDates = function(dates) {
+      var date, open, result;
+      result = [];
+      for (date in dates) {
+        if (!__hasProp.call(dates, date)) continue;
+        open = dates[date];
+        result.push(this.formatDate(date, open));
+      }
+      return result;
+    };
+
     BookingForm.prototype.render = function() {
-      var date, dates, show;
+      var show;
       show = this.booking.show();
-      dates = (function() {
-        var _i, _len, _ref1, _results;
-        _ref1 = show.dates();
-        _results = [];
-        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-          date = _ref1[_i];
-          _results.push({
-            date: date.db(),
-            label: date.label()
-          });
-        }
-        return _results;
-      })();
       this.html(Milk.render(this.constructor.template, {
         show: show.title(),
         shows: (function() {
@@ -94,12 +114,10 @@
             });
           }
           return _results;
-        })(),
-        date: dates[0].label,
-        dates: dates
+        })()
       }));
       this.$("[name=show_id]").val(show.id);
-      return this.$("[name=date]").val(dates[0].date);
+      return this.updateDates();
     };
 
     BookingForm.prototype.show = function() {
@@ -165,15 +183,32 @@
     };
 
     BookingForm.prototype.updateDates = function(e) {
-      var date, dates, _i, _len, _results;
-      this.booking.show_id = this.$("[name=show_id]").val();
-      dates = this.booking.show().dates();
-      this.currentPerformance.html(dates[0].label());
+      var date, dates, first, _i, _len, _results;
+      this.booking.show_id(this.$("[name=show_id]").val());
+      dates = this.formatDates(this.booking.show().dates());
+      first = ((function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = dates.length; _i < _len; _i++) {
+          date = dates[_i];
+          if (date.open) {
+            _results.push(date);
+          }
+        }
+        return _results;
+      })())[0];
+      if (first) {
+        this.$("[name=date]").val(first.date);
+        this.currentPerformance.html(first.label);
+        this.$("[rel=submit]").removeProp("disabled");
+      } else {
+        this.currentPerformance.html("SOLD OUT!");
+      }
       this.performanceMenu.empty();
       _results = [];
       for (_i = 0, _len = dates.length; _i < _len; _i++) {
         date = dates[_i];
-        _results.push($("<a href=\"#\">").html(date.label()).attr("data-value", date.db()).appendTo(this.performanceMenu).wrap("<li>"));
+        _results.push($("<a href=\"#\">").html(date.label).attr("data-value", date.date).prop("disabled", !date.open).toggleClass("disabled", !date.open).appendTo(this.performanceMenu).wrap("<li>"));
       }
       return _results;
     };

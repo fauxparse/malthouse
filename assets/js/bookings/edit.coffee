@@ -41,6 +41,9 @@ class BookingsController extends Spine.Controller
       <div class=\"stat col-xs-1\" rel=\"unpaid\">{{unpaid}}</div>
       <div class=\"stat col-xs-1\" rel=\"paid\">{{paid}}</div>
       <div class=\"stat col-xs-1\" rel=\"total\">{{total}}</div>
+      {{#comments}}
+      <div class=\"col-xs-12 comments\"><p>{{comments}}</p></div>
+      {{/comments}}
     </div>
   "
   
@@ -55,7 +58,7 @@ class BookingsController extends Spine.Controller
       .bind("refresh", @renderBookings)
       .bind("update",  @update)
     
-    $.getJSON(window.location.pathname).done (data) ->
+    $.getJSON(window.location.pathname + "?_=" + (new Date().getTime())).done (data) ->
       Venue.refresh data.venues
       Show.refresh data.show
       Booking.refresh data.bookings
@@ -63,7 +66,7 @@ class BookingsController extends Spine.Controller
   render: (show) =>
     @show = show.shift?() or show
     $("h1").html "Bookings for <strong>#{@show.title()}</strong>"
-    for date in @show.dates()
+    for date in @show.parsedDates()
       id = date.db().replace(/[^\d]+/g, "-")
       section = $(Milk.render @constructor.SECTION, id: id).appendTo(@el)
         .attr("data-date", date.db())

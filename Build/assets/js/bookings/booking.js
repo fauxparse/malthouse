@@ -11,7 +11,7 @@
       return _ref;
     }
 
-    Booking.configure("Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount");
+    Booking.configure("Booking", "show_id", "date", "tickets", "name", "email", "phone", "payment", "paid", "amount", "comments");
 
     Booking.extend(Spine.Model.Ajax);
 
@@ -60,7 +60,7 @@
     };
 
     Booking.prototype.date = function(date) {
-      if (date != null) {
+      if (date) {
         this._date = new Date(Date.parseDB(date));
       }
       return this._date;
@@ -90,7 +90,7 @@
       if (!this.show_id()) {
         errors.show_id = "Please select a show";
       }
-      if (!this.date()) {
+      if (!(this.date() && this._date.getTime && !isNaN(this._date.getTime()))) {
         errors.date = "Please select a performance";
       }
       if (!this.name()) {

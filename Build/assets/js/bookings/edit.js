@@ -19,7 +19,7 @@
 
     BookingsController.SECTION = "    <section class=\"performance\">      <a href=\"#bookings-{{id}}\" data-toggle=\"collapse\"><span class=\"glyphicon glyphicon-play\"></span></a>      <header>        <div class=\"row\">          <div class=\"col-xs-12\"><h2></h2></div>        </div>        <div class=\"row\">          <div class=\"col-xs-9\">            <div class=\"progress\">              <div class=\"progress-bar progress-bar-danger\" style=\"width: 0%;\" rel=\"unpaid\"></div>              <div class=\"progress-bar progress-bar-success\" style=\"width: 0%;\" rel=\"paid\"></div>            </div>          </div>          <div class=\"stat col-xs-1\" rel=\"unpaid\"></div>          <div class=\"stat col-xs-1\" rel=\"paid\"></div>          <div class=\"stat col-xs-1\" rel=\"total\"></div>        </div>      </header>      <div class=\"collapse bookings\" id=\"bookings-{{id}}\">      </div>    </section>  ";
 
-    BookingsController.BOOKING = "    <div class=\"row booking\" data-reference=\"{{id}\">      <div class=\"col-xs-3\">        <div class=\"reference\">{{id}}</div>        <div class=\"name\">{{name}}</div>      </div>      <div class=\"col-xs-3\">        {{#email}}<a class=\"email\" href=\"mailto:{{email}}\">{{email}}</a>{{/email}}        <div class=\"phone\">{{phone}}</div>      </div>      <div class=\"col-xs-1\">        <div class=\"payment\">{{payment}}</div>        <div class=\"amount\">{{amount}}</div>      </div>      <div class=\"col-xs-2\"><button class=\"btn btn-default btn-block\">Unpaid</button></div>      <div class=\"stat col-xs-1\" rel=\"unpaid\">{{unpaid}}</div>      <div class=\"stat col-xs-1\" rel=\"paid\">{{paid}}</div>      <div class=\"stat col-xs-1\" rel=\"total\">{{total}}</div>    </div>  ";
+    BookingsController.BOOKING = "    <div class=\"row booking\" data-reference=\"{{id}\">      <div class=\"col-xs-3\">        <div class=\"reference\">{{id}}</div>        <div class=\"name\">{{name}}</div>      </div>      <div class=\"col-xs-3\">        {{#email}}<a class=\"email\" href=\"mailto:{{email}}\">{{email}}</a>{{/email}}        <div class=\"phone\">{{phone}}</div>      </div>      <div class=\"col-xs-1\">        <div class=\"payment\">{{payment}}</div>        <div class=\"amount\">{{amount}}</div>      </div>      <div class=\"col-xs-2\"><button class=\"btn btn-default btn-block\">Unpaid</button></div>      <div class=\"stat col-xs-1\" rel=\"unpaid\">{{unpaid}}</div>      <div class=\"stat col-xs-1\" rel=\"paid\">{{paid}}</div>      <div class=\"stat col-xs-1\" rel=\"total\">{{total}}</div>      {{#comments}}      <div class=\"col-xs-12 comments\"><p>{{comments}}</p></div>      {{/comments}}    </div>  ";
 
     BookingsController.prototype.events = {
       "show.bs.collapse .bookings": "open",
@@ -30,7 +30,7 @@
     BookingsController.prototype.init = function() {
       Show.bind("refresh", this.render);
       Booking.bind("refresh", this.renderBookings).bind("update", this.update);
-      return $.getJSON(window.location.pathname).done(function(data) {
+      return $.getJSON(window.location.pathname + "?_=" + (new Date().getTime())).done(function(data) {
         Venue.refresh(data.venues);
         Show.refresh(data.show);
         return Booking.refresh(data.bookings);
@@ -41,7 +41,7 @@
       var date, id, section, _i, _len, _ref1, _results;
       this.show = (typeof show.shift === "function" ? show.shift() : void 0) || show;
       $("h1").html("Bookings for <strong>" + (this.show.title()) + "</strong>");
-      _ref1 = this.show.dates();
+      _ref1 = this.show.parsedDates();
       _results = [];
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
         date = _ref1[_i];

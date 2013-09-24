@@ -49,19 +49,26 @@
     };
 
     Show.prototype.dates = function(dates) {
-      var date;
       if (dates != null) {
-        this._dates = (function() {
-          var _i, _len, _results;
-          _results = [];
-          for (_i = 0, _len = dates.length; _i < _len; _i++) {
-            date = dates[_i];
-            _results.push(new Date(Date.parseDB(date)));
-          }
-          return _results;
-        })();
+        this._parsedDates = void 0;
+        this._dates = $.extend({}, dates);
       }
-      return (this._dates || []).slice(0);
+      return this._dates || {};
+    };
+
+    Show.prototype.parsedDates = function() {
+      var date, open, _ref2;
+      if (this._parsedDates == null) {
+        this._parsedDates = [];
+        _ref2 = this.dates();
+        for (date in _ref2) {
+          if (!__hasProp.call(_ref2, date)) continue;
+          open = _ref2[date];
+          this._parsedDates.push(new Date(Date.parseDB(date)));
+        }
+        this._parsedDates.sort();
+      }
+      return this._parsedDates;
     };
 
     Show.prototype.price = function(price) {

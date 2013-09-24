@@ -48,6 +48,7 @@ header {
   .performance.open a[data-toggle] {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg); }
 
 .booking [class*=col-xs] {
@@ -69,6 +70,16 @@ header {
   white-space: nowrap; }
   .booking .email:after {
     display: none; }
+.booking .comments {
+  clear: left;
+  border: none;
+  padding-top: 0; }
+  .booking .comments p {
+    margin: 0; }
+    .booking .comments p::before {
+      content: "“"; }
+    .booking .comments p::after {
+      content: "”"; }
 
 @media print {
   * {

@@ -92,12 +92,18 @@ class window.BookingForm extends Spine.Controller
                 </div>
               </div>
             </div>
+            <div class=\"form-group\">
+              <label class=\"col-sm-4 control-label\">Other comments</label>
+              <div class=\"col-sm-8\">
+                <textarea name=\"comments\" class=\"form-control\" rows=\"3\"></textarea>
+              </div>
+            </div>
           </form>
           <div class=\"loading-overlay\" style=\"display: none;\"><h4>Processing booking…</h4></div>
         </div>
         <div class=\"modal-footer\">
           <button type=\"button\" class=\"btn btn-default\" rel=\"cancel\" data-dismiss=\"modal\">Cancel</button>
-          <button type=\"button\" class=\"btn btn-success\" rel=\"submit\">Submit booking</button>
+          <button type=\"button\" class=\"btn btn-success\" rel=\"submit\" disabled>Submit booking</button>
         </div>
       </div>
     </div>
@@ -163,17 +169,31 @@ class window.BookingForm extends Spine.Controller
     
   hidden: =>
     @immediately @release
+
+  day: (date) ->
+    date or= new Date
+    new Date(date.getFullYear(), date.getMonth(), date.getDate(), 4, 0)
+    
+  isInFuture: (date) ->
+    @day(date) > @day()
+  
+  formatDate: (date, open = true) ->
+    d = new Date(Date.parseDB(date))
+    { date: d.db(), label: d.label(), open: open and @isInFuture(d) }
+    
+  formatDates: (dates) ->
+    result = []
+    for own date, open of dates
+      result.push @formatDate(date, open)
+    return result
   
   render: ->
     show = @booking.show()
-    dates = ({ date: date.db(), label: date.label() } for date in show.dates())
     @html Milk.render @constructor.template,
       show:    show.title()
       shows:   ({ id: show.id, title: show.title() } for show in Show.all())
-      date:    dates[0].label
-      dates:   dates
     @$("[name=show_id]").val show.id
-    @$("[name=date]").val dates[0].date
+    @updateDates()
     
   show: =>
     @el.modal "show"
@@ -217,14 +237,22 @@ class window.BookingForm extends Spine.Controller
       input.val(newValue).trigger("change")
 
   updateDates: (e) ->
-    @booking.show_id = @$("[name=show_id]").val()
-    dates = @booking.show().dates()
-    @currentPerformance.html dates[0].label()
+    @booking.show_id @$("[name=show_id]").val()
+    dates = @formatDates @booking.show().dates()
+    first = (date for date in dates when date.open)[0]
+    if first
+      @$("[name=date]").val first.date
+      @currentPerformance.html first.label
+      @$("[rel=submit]").removeProp("disabled")
+    else
+      @currentPerformance.html "SOLD OUT!"
     @performanceMenu.empty()
     for date in dates
       $("<a href=\"#\">")
-        .html(date.label())
-        .attr("data-value", date.db())
+        .html(date.label)
+        .attr("data-value", date.date)
+        .prop("disabled", !date.open)
+        .toggleClass("disabled", !date.open)
         .appendTo(@performanceMenu)
         .wrap("<li>")
         
