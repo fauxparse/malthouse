@@ -66,7 +66,18 @@
           open = _ref2[date];
           this._parsedDates.push(new Date(Date.parseDB(date)));
         }
-        this._parsedDates.sort();
+        this._parsedDates.sort(function(a, b) {
+          a = a.getTime();
+          b = b.getTime();
+          if (a < b) {
+            return -1;
+          } else if (a > b) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+        console.log(this._parsedDates);
       }
       return this._parsedDates;
     };
