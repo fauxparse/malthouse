@@ -31,7 +31,6 @@ class window.Show extends Spine.Model
         a = a.getTime()
         b = b.getTime()
         if a < b then -1 else if a > b then 1 else 0
-      console.log @_parsedDates
     @_parsedDates
     
   price: (price) ->

@@ -77,7 +77,6 @@
             return 0;
           }
         });
-        console.log(this._parsedDates);
       }
       return this._parsedDates;
     };
