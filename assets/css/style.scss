@@ -134,6 +134,7 @@ section {
     transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   }
 }
@@ -492,6 +493,7 @@ footer {
       padding-left: 4px;
       padding-right: 4px;
       font-size: 150%;
+      width: 2.333333em;
     }
     [rel="minus"] { border-right: none; }
     [rel="plus"]  { border-left:  none; }

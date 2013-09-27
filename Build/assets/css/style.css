@@ -100,6 +100,7 @@ section {
     transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); }
 
 nav ul {
@@ -357,7 +358,8 @@ footer {
   text-align: center;
   padding-left: 4px;
   padding-right: 4px;
-  font-size: 150%; }
+  font-size: 150%;
+  width: 2.333333em; }
 .modal.booking .input-group [rel="minus"] {
   border-right: none; }
 .modal.booking .input-group [rel="plus"] {
