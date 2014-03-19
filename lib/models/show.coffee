@@ -24,7 +24,7 @@ class Show extends Spine.Model
           for row in collection
             [id, date] = row._id
             shows[id].dates[date] and= row.value < shows[id].venue().capacity
-          shows = shows[key] for key in Object.keys(shows)
+          shows = (shows[key] for key in Object.keys(shows))
           callback null, shows
         else
           callback error, collection

@@ -32,6 +32,9 @@ class window.Show extends Spine.Model
         b = b.getTime()
         if a < b then -1 else if a > b then 1 else 0
     @_parsedDates
+
+  visible: ->
+    Math.max(@parsedDates()...) > +(new Date)
     
   price: (price) ->
     @_price = parseInt(price, 10) if price?

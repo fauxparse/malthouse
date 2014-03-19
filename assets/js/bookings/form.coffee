@@ -191,7 +191,7 @@ class window.BookingForm extends Spine.Controller
     show = @booking.show()
     @html Milk.render @constructor.template,
       show:    show.title()
-      shows:   ({ id: show.id, title: show.title() } for show in Show.all())
+      shows:   ({ id: show.id, title: show.title() } for show in Show.all() when show.visible())
     @$("[name=show_id]").val show.id
     @updateDates()
     
@@ -238,6 +238,7 @@ class window.BookingForm extends Spine.Controller
 
   updateDates: (e) ->
     @booking.show_id @$("[name=show_id]").val()
+    @currentShow.text @booking.show().title()
     dates = @formatDates @booking.show().dates()
     first = (date for date in dates when date.open)[0]
     if first

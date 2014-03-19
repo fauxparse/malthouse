@@ -108,10 +108,12 @@
           _results = [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
             show = _ref1[_i];
-            _results.push({
-              id: show.id,
-              title: show.title()
-            });
+            if (show.visible()) {
+              _results.push({
+                id: show.id,
+                title: show.title()
+              });
+            }
           }
           return _results;
         })()
@@ -185,6 +187,7 @@
     BookingForm.prototype.updateDates = function(e) {
       var date, dates, first, _i, _len, _results;
       this.booking.show_id(this.$("[name=show_id]").val());
+      this.currentShow.text(this.booking.show().title());
       dates = this.formatDates(this.booking.show().dates());
       first = ((function() {
         var _i, _len, _results;

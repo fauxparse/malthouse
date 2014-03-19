@@ -81,6 +81,10 @@
       return this._parsedDates;
     };
 
+    Show.prototype.visible = function() {
+      return Math.max.apply(Math, this.parsedDates()) > +(new Date);
+    };
+
     Show.prototype.price = function(price) {
       if (price != null) {
         this._price = parseInt(price, 10);
