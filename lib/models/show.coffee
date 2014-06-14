@@ -5,13 +5,13 @@ Venue = require "./venue"
 class Show extends Spine.Model
   @DATA = require "../../shows.json"
   @configure "Show", "title", "byline", "dates", "venue", "price"
-  
+
   venue: (id) ->
     if id?
       @_venue_id = id
       @_venue = undefined
     @_venue or= Venue.find @_venue_id
-  
+
   @bookings = (callback) ->
     Booking.collection().mapReduce(
       "function () { emit([this.show_id, this.date], this.tickets); }"
@@ -29,7 +29,7 @@ class Show extends Spine.Model
         else
           callback error, collection
     )
-  
+
 Venue.refresh Show.DATA.venues
 Show.refresh Show.DATA.shows
 Booking.Show = Show

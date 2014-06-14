@@ -5,18 +5,18 @@
       "title" : "Alice's Adventures in Wonderland",
       "byline" : "Adapted by Matt Powell & directed by Scott Campbell",
       "dates" : {
-        "2013-09-28 11:00": true, 
+        "2013-09-28 11:00": true,
         "2013-09-28 13:00": true,
-        "2013-09-29 11:00": true, 
+        "2013-09-29 11:00": true,
         "2013-09-29 13:00": true,
-        "2013-10-05 11:00": true, 
+        "2013-10-05 11:00": true,
         "2013-10-05 13:00": true,
-        "2013-10-06 11:00": true, 
+        "2013-10-06 11:00": true,
         "2013-10-06 13:00": true,
-        "2013-10-12 11:00": true, 
+        "2013-10-12 11:00": true,
         "2013-10-12 13:00": true,
         "2013-10-12 15:00": true,
-        "2013-10-13 11:00": true, 
+        "2013-10-13 11:00": true,
         "2013-10-13 13:00": true
       },
       "venue" : "malthouse",
@@ -27,24 +27,45 @@
       "title" : "Space Mouse/Underwater Mouse",
       "byline" : "Written & directed by Matt Powell",
       "dates" : {
-        "2014-04-19 11:00": true, 
+        "2014-04-19 11:00": true,
         "2014-04-19 13:00": true,
-        "2014-04-21 11:00": true, 
+        "2014-04-21 11:00": true,
         "2014-04-21 13:00": true,
-        "2014-04-26 11:00": true, 
+        "2014-04-26 11:00": true,
         "2014-04-26 13:00": true,
-        "2014-04-27 11:00": true, 
+        "2014-04-27 11:00": true,
         "2014-04-27 13:00": true,
-        "2014-05-03 11:00": true, 
+        "2014-05-03 11:00": true,
         "2014-05-03 13:00": true,
-        "2014-05-04 11:00": true, 
+        "2014-05-04 11:00": true,
         "2014-05-04 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 700
+    },
+    {
+      "id" : "once",
+      "title" : "Once Upon A Happy Ending",
+      "byline" : "Written & directed by Nickie Wellbourn",
+      "dates" : {
+        "2014-07-05 11:00": true,
+        "2014-07-05 13:00": true,
+        "2014-07-06 11:00": true,
+        "2014-07-06 13:00": true,
+        "2014-07-12 11:00": true,
+        "2014-07-12 13:00": true,
+        "2014-07-13 11:00": true,
+        "2014-07-13 13:00": true,
+        "2014-07-19 11:00": true,
+        "2014-07-19 13:00": true,
+        "2014-07-20 11:00": true,
+        "2014-07-20 13:00": true
       },
       "venue" : "malthouse",
       "price" : 700
     }
   ],
-  
+
   "venues" : [
     {
       "id"       : "malthouse",

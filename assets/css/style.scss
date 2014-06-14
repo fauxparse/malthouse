@@ -1,5 +1,5 @@
 @import url("http://hello.myfonts.net/count/26421d");
- 
+
 @font-face {font-family: 'Populaire';src: url('../fonts/26421D_0_0.eot');src: url('../fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26421D_0_0.woff') format('woff'),url('../fonts/26421D_0_0.ttf') format('truetype');}
 
 $BLACK:  #222;
@@ -23,7 +23,7 @@ body {
 
 h1, h2, h3, h4 {
   font-weight: 100;
-  
+
   small {
     font-weight: 100;
   }
@@ -47,11 +47,24 @@ section {
 
 #next {
   padding: 0;
-  
+
   .show {
     height: 384px;
     overflow: hidden;
     position: relative;
+
+    &.once {
+      background: #ec008c url(../img/splash/once/title.png) no-repeat 50% 100%;
+      background-size: contain;
+      h2, h3, p {
+        display: none;
+      }
+      .btn {
+        position: absolute;
+        left: 40%;
+        bottom: 10%;
+      }
+    }
 
     &.space {
       background: #00aeef url(../img/splash/space/waves.png) repeat-x 50% 0;
@@ -84,7 +97,7 @@ section {
         z-index: 1;
       }
     }
-    
+
     &.alice {
       background-color: #fbaf3f;
       background-image: url(../img/splash/alice/stripes.png);
@@ -96,13 +109,13 @@ section {
       background-repeat: repeat;
       background-position: 0 0;
       color: white;
-      
+
       a[rel="book"] {
         position: absolute;
         right: 0;
         bottom: 10px;
         min-width: 20%;
-        
+
         @media (max-width: 767px) {
           left: 10px;
           right: 10px;
@@ -119,7 +132,7 @@ section {
           left: 0;
           top: -1000px;
         }
-      
+
         h3,
         .dates,
         .times {
@@ -132,13 +145,13 @@ section {
           font-weight: 100;
           text-align: right;
         }
-        
+
         h3 { top: 192px; }
-        
+
         .dates { top: 256px; }
-        
+
         .times { top: 288px; }
-        
+
         @media (max-width: 767px) {
           h2, h3, .dates, .times {
             display: none;
@@ -147,7 +160,7 @@ section {
       }
     }
   }
-  
+
   .ribbon {
     background-color: $GREEN;
     overflow: hidden;
@@ -176,11 +189,11 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
     li {
       margin: 0;
       padding: 0;
-      
+
       a.section {
         @include populaire;
         display: block;
@@ -197,11 +210,11 @@ nav {
           background: none;
         }
       }
-      
+
       &.active a {
         color: $PINK;
       }
-      
+
       p {
         font-size: 1.142857143em;
         margin: 0.25em 0 1em;
@@ -222,14 +235,14 @@ nav {
   background: white;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-  
+
   li {
     position: relative;
-    
+
     a.section {
       border-bottom: none;
     }
-    
+
     p {
       position: absolute;
       left: -8px;
@@ -242,7 +255,7 @@ nav {
       display: none;
       font-size: inherit;
       z-index: 1000;
-      
+
       &::before {
         content: "";
         position: absolute;
@@ -253,12 +266,12 @@ nav {
         border-bottom: 8px solid rgba(0, 0, 0, 0.85);
       }
     }
-    
+
     &:hover p {
       display: block;
     }
   }
-  
+
   a[rel="top"] {
     position: absolute;
     top: 10px;
@@ -267,25 +280,25 @@ nav {
     line-height: 2em;
     vertical-align: middle;
   }
-  
+
   @media (max-width: 1023px) {
     padding: 0 15px;
-    
+
     li {
       float: left;
       width: auto !important;
       padding: 0 5px;
-      
+
       a.section {
         font-size: 24px;
         line-height: 32px;
       }
-      
+
       &:hover p {
         display: none;
       }
     }
-    
+
     a[rel="top"] { top: 0; }
   }
 }
@@ -293,7 +306,7 @@ nav {
 #home {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   padding-bottom: 20px;
-  
+
   .title {
     .punch {
       margin-top: -80px;
@@ -301,7 +314,7 @@ nav {
       background: url(../img/punch.png) no-repeat 100% 0;
       background-size: contain;
     }
-    
+
     h1 {
       @include populaire;
       color: $PINK;
@@ -309,16 +322,16 @@ nav {
       line-height: 0.85em;
       margin: 20px 0 0;
     }
-    
+
     h2 {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 32px;
     }
-    
+
     @media (min-width: 1200px) {
       h1 { font-size: 80px; }
     }
-    
+
     @media (max-width: 979px) {
       h2 { font-size: 24px; }
       .punch { margin-top: -40px; height: 188px; }
@@ -327,7 +340,7 @@ nav {
     @media (max-width: 767px) {
       h1 { font-size: 40px; text-align: center; }
       h2 { font-size: 24px; text-align: center; }
-      
+
       .punch {
         width: 84px;
         height: 84px;
@@ -336,7 +349,7 @@ nav {
         background-position: 50% 50%;
       }
     }
-    
+
   }
 }
 
@@ -344,11 +357,11 @@ nav {
   background: $BLUE;
   color: white;
   padding-bottom: 0;
-  
+
   .cushion {
     color: $YELLOW;
   }
-  
+
   .recent-shows {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -363,24 +376,24 @@ nav {
       }
     }
   }
-  
+
   .timeline {
     margin-top: 20px;
     overflow-x: scroll;
     padding-bottom: 20px;
-    
+
     @media (max-width: 767px) {
       margin-left: -20px;
       margin-right: -20px;
     }
-    
+
     .year {
       float: left;
       width: 22.857142857em;
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      
+
       h4 {
         font-size: 400%;
         margin: 0;
@@ -389,12 +402,12 @@ nav {
         line-height: 1;
         @include populaire;
       }
-      
+
       ul {
         list-style: none;
         margin: 0;
         padding: 1.285714286em 2em 0 0;
-        
+
         li {
           display: block;
           margin: 0 0 0.5em;
@@ -409,16 +422,16 @@ nav {
 #people {
   background: $PINK;
   color: white;
-  
+
   .committee {
     margin: 0;
-  
+
     dt {
       font-weight: 100;
       font-size: 24px;
       line-height: 40px;
     }
-    
+
     dd {
       font-weight: 100;
       font-size: 16px;
@@ -431,12 +444,12 @@ nav {
 #contact {
   .map {
     position: relative;
-    
+
     .canvas {
       height: 200px;
       margin-bottom: 20px;
     }
-    
+
     > a {
       position: absolute;
       right: 0;
@@ -444,14 +457,14 @@ nav {
       margin-bottom: 10px;
     }
   }
-  
+
   .vcard {
     .fn,
     .email,
     .tel .value {
       font-weight: bold;
     }
-    
+
     [rel=facebook] {
       font-weight: bold;
       display: block;
@@ -462,7 +475,7 @@ nav {
 footer {
   color: #999;
   padding-bottom: 6em;
-  
+
   .container {
     padding-top: 0.5em;
     border-top: 1px solid #ccc;
@@ -477,12 +490,12 @@ footer {
   background: $BLACK;
   color: #ccc;
   padding: 1em 20px;
-  
+
   p {
     margin: 0;
     text-shadow: 0 -1px 0 black;
   }
-  
+
   .close {
     position: absolute;
     right: 20px;
@@ -504,7 +517,7 @@ footer {
     font-size: 250%;
     line-height: 0.75em;
   }
-  
+
   [rel="performances"] {
     .dropdown-menu :disabled,
     .dropdown-menu .disabled {
@@ -530,7 +543,7 @@ footer {
     [rel="minus"] { border-right: none; }
     [rel="plus"]  { border-left:  none; }
   }
-  
+
   .ticket-pricing {
     line-height: 34px;
     font-size: 150%;
@@ -538,7 +551,7 @@ footer {
     padding-left: 0;
     .total-price { font-weight: bold; }
   }
-  
+
   .loading-overlay {
     background: white url(../img/loading.gif) no-repeat 50% 50%;
     opacity: 0.9;
@@ -547,7 +560,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    
+
     h4 {
       position: absolute;
       left: 0;
@@ -568,7 +581,7 @@ footer {
   body {
     padding: 0;
   }
-  
+
   section {
     padding: 20px;
   }
@@ -577,5 +590,5 @@ footer {
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
 
   /* Don't forget your Retina CSS! */
-  
+
 }
