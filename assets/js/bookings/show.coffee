@@ -4,24 +4,24 @@ class window.Venue extends Spine.Model
   capacity: (capacity) ->
     @_capacity = parseInt(capacity, 10) if capacity?
     @_capacity
-    
+
 class window.Show extends Spine.Model
-  @configure "Show", "title", "byline", "dates", "venue", "price"
-  
+  @configure "Show", "title", "byline", "dates", "venue", "price", "note"
+
   title: (title) ->
     @_title = title if title?
     @_title
-    
+
   byline: (byline) ->
     @_byline = byline if byline?
     @_byline
-    
+
   dates: (dates) ->
     if dates?
       @_parsedDates = undefined
       @_dates = $.extend {}, dates
     @_dates || {}
-    
+
   parsedDates: ->
     unless @_parsedDates?
       @_parsedDates = []
@@ -35,11 +35,11 @@ class window.Show extends Spine.Model
 
   visible: ->
     Math.max(@parsedDates()...) > +(new Date)
-    
+
   price: (price) ->
     @_price = parseInt(price, 10) if price?
     @_price
-    
+
   venue: (venue) ->
     @_venue_id = venue.id or venue if venue?
     Venue.find @_venue_id

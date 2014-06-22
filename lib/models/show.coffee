@@ -4,7 +4,7 @@ Venue = require "./venue"
 
 class Show extends Spine.Model
   @DATA = require "../../shows.json"
-  @configure "Show", "title", "byline", "dates", "venue", "price"
+  @configure "Show", "title", "byline", "dates", "venue", "price", "note"
 
   venue: (id) ->
     if id?

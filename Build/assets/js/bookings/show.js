@@ -32,7 +32,7 @@
       return _ref1;
     }
 
-    Show.configure("Show", "title", "byline", "dates", "venue", "price");
+    Show.configure("Show", "title", "byline", "dates", "venue", "price", "note");
 
     Show.prototype.title = function(title) {
       if (title != null) {

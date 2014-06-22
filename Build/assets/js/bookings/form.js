@@ -188,6 +188,13 @@
       var date, dates, first, _i, _len, _results;
       this.booking.show_id(this.$("[name=show_id]").val());
       this.currentShow.text(this.booking.show().title());
+      this.$(".show-note").remove();
+      if (this.booking.show().note != null) {
+        $("<div>", {
+          "class": "alert alert-info show-note",
+          html: this.booking.show().note
+        }).prependTo(this.form);
+      }
       dates = this.formatDates(this.booking.show().dates());
       first = ((function() {
         var _i, _len, _results;

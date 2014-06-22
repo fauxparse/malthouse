@@ -108,7 +108,7 @@ class window.BookingForm extends Spine.Controller
       </div>
     </div>
     "
-    
+
   @successTemplate: "
     <h3>Thanks for booking!</h3>
     <p>Your booking number is <strong>{{id}}</strong>.</p>
@@ -129,7 +129,7 @@ class window.BookingForm extends Spine.Controller
     {{/email}}
     <p>We’ll see you on <strong>{{date}}</strong>! The show starts at <strong>{{time}}</strong>, but please arrive around 15–20 minutes early.</p>
     "
-    
+
   elements:
     "form" : "form"
     ".modal-content" : "dialog"
@@ -139,7 +139,7 @@ class window.BookingForm extends Spine.Controller
     "[rel=performances] .dropdown-menu" : "performanceMenu"
     "[name=tickets]" : "numberOfTickets"
     ".loading-overlay" : "overlay"
-    
+
   events:
     "mousedown [rel=minus], [rel=plus]" : "startCount"
     "tick [rel=minus]" : "minus"
@@ -149,9 +149,9 @@ class window.BookingForm extends Spine.Controller
     "click [rel=submit]" : "submit"
     "submit form" : "submit"
     "keypress :input" : "keypress"
-    
+
   @url: "/bookings"
-  
+
   init: ->
     @el
       .addClass("booking modal fade")
@@ -163,30 +163,30 @@ class window.BookingForm extends Spine.Controller
     Booking
       .bind("ajaxSuccess", @success)
       .bind("ajaxError",   @error)
-    
+
   shown: =>
     @$("[name=name]").focus()
-    
+
   hidden: =>
     @immediately @release
 
   day: (date) ->
     date or= new Date
     new Date(date.getFullYear(), date.getMonth(), date.getDate(), 4, 0)
-    
+
   isInFuture: (date) ->
     @day(date) > @day()
-  
+
   formatDate: (date, open = true) ->
     d = new Date(Date.parseDB(date))
     { date: d.db(), label: d.label(), open: open and @isInFuture(d) }
-    
+
   formatDates: (dates) ->
     result = []
     for own date, open of dates
       result.push @formatDate(date, open)
     return result
-  
+
   render: ->
     show = @booking.show()
     @html Milk.render @constructor.template,
@@ -194,20 +194,20 @@ class window.BookingForm extends Spine.Controller
       shows:   ({ id: show.id, title: show.title() } for show in Show.all() when show.visible())
     @$("[name=show_id]").val show.id
     @updateDates()
-    
+
   show: =>
     @el.modal "show"
-    
+
   hide: =>
     @el.modal "hide"
-    
+
   changeNumberOfTickets: (e, inc = 1) ->
     input = $(e.target).closest(".input-group").find("input")
     v = parseInt input.val(), 10
     v = 1 if isNaN v
     input.val(Math.max(v + inc, 1)).trigger("change")
     @updatePrices()
-    
+
   startCount: (e) ->
     e.preventDefault()
     button = $(e.target).trigger("tick")
@@ -216,20 +216,20 @@ class window.BookingForm extends Spine.Controller
         button.trigger "tick"
       $(window).one "mouseup", -> clearInterval ticker
     $(window).one "mouseup", -> clearTimeout initial
-    
+
   minus: (e) ->
     @changeNumberOfTickets e, -1
-    
+
   plus: (e) ->
     @changeNumberOfTickets e, 1
-    
+
   dropdownChanged: (e) ->
     e.preventDefault()
     target = $(e.target).closest("a")
     input = target.closest(".form-group").find("input")
     newValue = target.attr("data-value")
     oldValue = input.val()
-    
+
     unless newValue is oldValue
       target.closest(".form-group")
         .find(".current")
@@ -239,6 +239,10 @@ class window.BookingForm extends Spine.Controller
   updateDates: (e) ->
     @booking.show_id @$("[name=show_id]").val()
     @currentShow.text @booking.show().title()
+    @$(".show-note").remove()
+    if @booking.show().note?
+      $("<div>", class: "alert alert-info show-note", html: @booking.show().note)
+        .prependTo(@form)
     dates = @formatDates @booking.show().dates()
     first = (date for date in dates when date.open)[0]
     if first
@@ -256,13 +260,13 @@ class window.BookingForm extends Spine.Controller
         .toggleClass("disabled", !date.open)
         .appendTo(@performanceMenu)
         .wrap("<li>")
-        
+
   updatePrices: ->
     n = parseInt @numberOfTickets.val(), 10
     n = 1 if isNaN n
     @$(".ticket-price").text @booking.show().price().dollars()
     @$(".total-price").text (n * @booking.show().price()).dollars()
-    
+
   submit: ->
     booking = Booking.fromForm @form
     @$(".alert-danger").remove()
@@ -279,13 +283,13 @@ class window.BookingForm extends Spine.Controller
     else
       @overlay.fadeIn()
       booking.save()
-      
+
   success: (booking) =>
     @form.replaceWith @bookingSuccessMessage(booking)
     @$(".modal-footer [rel=submit]").remove()
     @$(".modal-footer [rel=cancel]").html("OK")
     @overlay.fadeOut()
-    
+
   bookingSuccessMessage: (booking) ->
     data = $.extend {}, booking.toJSON(),
       internetBanking: booking.payment() is "internet"
@@ -293,7 +297,7 @@ class window.BookingForm extends Spine.Controller
       date: booking.date().date()
       time: booking.date().time()
     Milk.render @constructor.successTemplate, data
-    
+
   error: (record, xhr, settings, error) =>
     @overlay.fadeOut()
     $("<div>")
