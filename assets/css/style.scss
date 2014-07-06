@@ -64,6 +64,19 @@ section {
         left: 40%;
         bottom: 10%;
       }
+      .notice {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        margin: 0;
+        background: $YELLOW;
+        color: black;
+        display: block;
+        z-index: 1020;
+        text-align: center;
+      }
     }
 
     &.space {

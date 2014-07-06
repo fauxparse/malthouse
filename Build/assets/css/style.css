@@ -43,6 +43,18 @@ section {
         position: absolute;
         left: 40%;
         bottom: 10%; }
+      #next .show.once .notice {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        margin: 0;
+        background: #fff301;
+        color: black;
+        display: block;
+        z-index: 1020;
+        text-align: center; }
     #next .show.space {
       background: #00aeef url(../img/splash/space/waves.png) repeat-x 50% 0;
       padding: 200px 25% 0;
