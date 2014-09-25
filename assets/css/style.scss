@@ -53,6 +53,14 @@ section {
     overflow: hidden;
     position: relative;
 
+    &.nothing {
+      background: $YELLOW;
+      height: auto;
+      font-size: 125%;
+      padding-top: 1em;
+      padding-bottom: 4em;
+    }
+
     &.once {
       background: #ec008c url(../img/splash/once/title.png) no-repeat 50% 100%;
       background-size: contain;

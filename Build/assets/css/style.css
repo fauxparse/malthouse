@@ -34,6 +34,12 @@ section {
     height: 384px;
     overflow: hidden;
     position: relative; }
+    #next .show.nothing {
+      background: #fff301;
+      height: auto;
+      font-size: 125%;
+      padding-top: 1em;
+      padding-bottom: 4em; }
     #next .show.once {
       background: #ec008c url(../img/splash/once/title.png) no-repeat 50% 100%;
       background-size: contain; }
