@@ -191,7 +191,7 @@ class window.BookingForm extends Spine.Controller
     show = @booking.show()
     @html Milk.render @constructor.template,
       show:    show.title()
-      shows:   ({ id: show.id, title: show.title() } for show in Show.all() when show.visible())
+      shows:   ({ id: s.id, title: s.title() } for s in Show.all() when s.visible())
     @$("[name=show_id]").val show.id
     @updateDates()
 

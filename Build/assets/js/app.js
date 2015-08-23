@@ -5,8 +5,9 @@
       return $("body").on("click", "a[rel=book]", function(e) {
         var booking, form;
         e.preventDefault();
+        console.log($(e.target).closest("[data-show]").attr("data-show"));
         booking = new Booking({
-          show_id: $(e.target).attr("data-show")
+          show_id: $(e.target).closest("[data-show]").attr("data-show")
         });
         form = new BookingForm({
           booking: booking

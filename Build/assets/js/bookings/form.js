@@ -98,7 +98,7 @@
     };
 
     BookingForm.prototype.render = function() {
-      var show;
+      var s, show;
       show = this.booking.show();
       this.html(Milk.render(this.constructor.template, {
         show: show.title(),
@@ -107,11 +107,11 @@
           _ref1 = Show.all();
           _results = [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-            show = _ref1[_i];
-            if (show.visible()) {
+            s = _ref1[_i];
+            if (s.visible()) {
               _results.push({
-                id: show.id,
-                title: show.title()
+                id: s.id,
+                title: s.title()
               });
             }
           }

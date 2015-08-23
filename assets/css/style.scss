@@ -61,6 +61,11 @@ section {
       padding-bottom: 4em;
     }
 
+    &.aladdin {
+      background: $BLUE url(../img/splash/aladdin/title.png) no-repeat 50% 50%;
+      color: $WHITE;
+    }
+
     &.once {
       background: #ec008c url(../img/splash/once/title.png) no-repeat 50% 100%;
       background-size: contain;

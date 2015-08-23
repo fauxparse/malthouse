@@ -1,6 +1,27 @@
 {
   "shows" : [
     {
+      "id" : "aladdin",
+      "title" : "Aladdin",
+      "byline" : "by Daisy Seely & directed by Sara Wilson",
+      "dates" : {
+        "2015-09-26 11:00": true,
+        "2015-09-26 13:00": true,
+        "2015-09-27 11:00": true,
+        "2015-09-27 13:00": true,
+        "2015-10-03 11:00": true,
+        "2015-10-03 13:00": true,
+        "2015-10-04 11:00": true,
+        "2015-10-04 13:00": true,
+        "2015-10-09 11:00": true,
+        "2015-10-09 13:00": true,
+        "2015-10-10 11:00": true,
+        "2015-10-10 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 700
+    },
+    {
       "id" : "alice",
       "title" : "Alice's Adventures in Wonderland",
       "byline" : "Adapted by Matt Powell & directed by Scott Campbell",
