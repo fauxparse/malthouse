@@ -64,6 +64,14 @@ section {
     &.aladdin {
       background: $BLUE url(../img/splash/aladdin/title.png) no-repeat 50% 50%;
       color: $WHITE;
+
+      p {
+        font-size: 1.25em;
+      }
+
+      a {
+        color: $YELLOW;
+      }
     }
 
     &.once {
