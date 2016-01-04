@@ -2,7 +2,6 @@ $ ->
   Show.fetch().done ->
     $("body").on "click", "a[rel=book]", (e) ->
       e.preventDefault()
-      console.log $(e.target).closest("[data-show]").attr("data-show")
       booking = new Booking show_id: $(e.target).closest("[data-show]").attr("data-show")
       form = new BookingForm booking: booking
       form.show()

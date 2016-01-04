@@ -2,9 +2,8 @@
 @import url("http://hello.myfonts.net/count/26421d");
 @font-face {
   font-family: 'Populaire';
-  src: url(../fonts/26421D_0_0.eot);
-  src: url(../fonts/26421D_0_0.eot?#iefix) format("embedded-opentype"), url(../fonts/26421D_0_0.woff) format("woff"), url(../fonts/26421D_0_0.ttf) format("truetype"); }
-
+  src: url("fonts/26421D_0_0.eot");
+  src: url("fonts/26421D_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/26421D_0_0.woff") format("woff"), url("fonts/26421D_0_0.ttf") format("truetype"); }
 h1 {
   font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   h1 strong {

@@ -22,7 +22,7 @@ class BookingsController extends Spine.Controller
       </div>
     </section>
   "
-  
+
   @BOOKING = "
     <div class=\"row booking\" data-reference=\"{{id}\">
       <div class=\"col-xs-3\">
@@ -46,23 +46,23 @@ class BookingsController extends Spine.Controller
       {{/comments}}
     </div>
   "
-  
+
   events:
     "show.bs.collapse .bookings" : "open"
     "hide.bs.collapse .bookings" : "collapse"
     "click .booking .btn" : "togglePayment"
-  
+
   init: ->
     Show.bind "refresh", @render
     Booking
       .bind("refresh", @renderBookings)
       .bind("update",  @update)
-    
+
     $.getJSON(window.location.pathname + "?_=" + (new Date().getTime())).done (data) ->
       Venue.refresh data.venues
       Show.refresh data.show
       Booking.refresh data.bookings
-  
+
   render: (show) =>
     @show = show.shift?() or show
     $("h1").html "Bookings for <strong>#{@show.title()}</strong>"
@@ -71,14 +71,14 @@ class BookingsController extends Spine.Controller
       section = $(Milk.render @constructor.SECTION, id: id).appendTo(@el)
         .attr("data-date", date.db())
         .find("h2").text(date.label()).end()
-    
+
   renderBookings: (bookings) =>
     @updateHeader @$(".total"), bookings, @show.dates().length * @show.venue().capacity()
     for own key, list of Booking.partition()
       section = $("section[data-date='#{key}']")
       @updateHeader section, list, @show.venue().capacity()
       section.find(".bookings").append @renderBooking(booking) for booking in list
-      
+
   renderBooking: (booking) =>
     data = $.extend {}, booking.toJSON(),
       payment: booking.payment().ucfirst()
@@ -93,7 +93,7 @@ class BookingsController extends Spine.Controller
         .addClass("paid")
         .find(".btn").addClass("btn-success").text("Paid").end()
     row
-    
+
   update: (booking) =>
     @$("[data-reference='#{booking.id}']")
       .replaceWith(@renderBooking(booking))
@@ -101,7 +101,7 @@ class BookingsController extends Spine.Controller
       (b for b in Booking.all() when b.date().getTime() is booking.date().getTime()),
       @show.venue().capacity()
     @updateHeader @$(".total"), Booking.all(), @show.dates().length * @show.venue().capacity()
-    
+
   updateHeader: (section, bookings, max) =>
     stats =
       unpaid: 0
@@ -114,7 +114,7 @@ class BookingsController extends Spine.Controller
     for own key, value of stats
       $("header .stat[rel=#{key}]", section).html value or "&nbsp;"
       $("header .progress-bar[rel=#{key}]", section).animate(width: "#{value * 100.0 / max}%")
-      
+
   open: (e) ->
     $(e.target).closest(".performance").addClass "open"
 
@@ -123,7 +123,7 @@ class BookingsController extends Spine.Controller
 
   bookingFromElement: (el) ->
     Booking.exists $(el).closest(".booking").attr("data-reference")
-    
+
   togglePayment: (e) ->
     if booking = @bookingFromElement(e.target)
       booking.updateAttributes { paid: !booking.paid() }

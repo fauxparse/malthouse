@@ -1,8 +1,0 @@
-Procfile
-app.coffee
-node_modules
-package.json
-shows.json
-node_modules/.bin/*
-lib
-old

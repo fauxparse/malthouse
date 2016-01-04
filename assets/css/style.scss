@@ -1,6 +1,6 @@
 @import url("http://hello.myfonts.net/count/26421d");
 
-@font-face {font-family: 'Populaire';src: url('../fonts/26421D_0_0.eot');src: url('../fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/26421D_0_0.woff') format('woff'),url('../fonts/26421D_0_0.ttf') format('truetype');}
+@font-face {font-family: 'Populaire';src: url('fonts/26421D_0_0.eot');src: url('fonts/26421D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/26421D_0_0.woff') format('woff'),url('fonts/26421D_0_0.ttf') format('truetype');}
 
 $BLACK:  #222;
 $WHITE:  #f8f8f8;
@@ -62,20 +62,16 @@ section {
     }
 
     &.aladdin {
-      background: $BLUE url(../img/splash/aladdin/title.png) no-repeat 50% 50%;
+      background: $BLUE url(img/splash/aladdin/title.png) no-repeat 50% 50%;
       color: $WHITE;
 
       p {
         font-size: 1.25em;
       }
-
-      a {
-        color: $YELLOW;
-      }
     }
 
     &.once {
-      background: #ec008c url(../img/splash/once/title.png) no-repeat 50% 100%;
+      background: #ec008c url(img/splash/once/title.png) no-repeat 50% 100%;
       background-size: contain;
       h2, h3, p {
         display: none;
@@ -101,7 +97,7 @@ section {
     }
 
     &.space {
-      background: #00aeef url(../img/splash/space/waves.png) repeat-x 50% 0;
+      background: #00aeef url(img/splash/space/waves.png) repeat-x 50% 0;
       padding: 200px 25% 0;
       color: white;
       text-align: center;
@@ -113,7 +109,7 @@ section {
         right: 0;
         bottom: 0;
         margin: 0;
-        background: url(../img/splash/space/title.png) no-repeat 50% 0;
+        background: url(img/splash/space/title.png) no-repeat 50% 0;
         background-size: contain;
         text-indent: -1000px;
         overflow: hidden;
@@ -134,7 +130,7 @@ section {
 
     &.alice {
       background-color: #fbaf3f;
-      background-image: url(../img/splash/alice/stripes.png);
+      background-image: url(img/splash/alice/stripes.png);
       background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, #f7931d), color-stop(.5, transparent), to(transparent));
       background-image: -moz-linear-gradient(#f7931d 50%, transparent 50%, transparent);
       background-image: -o-linear-gradient(#f7931d 50%, transparent 50%, transparent);
@@ -157,7 +153,7 @@ section {
       }
 
       .container {
-        background: url(../img/splash/alice/title.png) no-repeat 50% 0;
+        background: url(img/splash/alice/title.png) no-repeat 50% 0;
         height: 384px;
         position: relative;
 
@@ -345,7 +341,7 @@ nav {
     .punch {
       margin-top: -80px;
       height: 240px;
-      background: url(../img/punch.png) no-repeat 100% 0;
+      background: url(img/punch.png) no-repeat 100% 0;
       background-size: contain;
     }
 
@@ -379,7 +375,7 @@ nav {
         width: 84px;
         height: 84px;
         margin: 20px auto;
-        background-image: url(../img/punch-small.png);
+        background-image: url(img/punch-small.png);
         background-position: 50% 50%;
       }
     }
@@ -587,7 +583,7 @@ footer {
   }
 
   .loading-overlay {
-    background: white url(../img/loading.gif) no-repeat 50% 50%;
+    background: white url(img/loading.gif) no-repeat 50% 50%;
     opacity: 0.9;
     position: absolute;
     top: 0;

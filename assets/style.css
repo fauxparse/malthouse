@@ -1,9 +1,8 @@
 @import url("http://hello.myfonts.net/count/26421d");
 @font-face {
   font-family: 'Populaire';
-  src: url(../fonts/26421D_0_0.eot);
-  src: url(../fonts/26421D_0_0.eot?#iefix) format("embedded-opentype"), url(../fonts/26421D_0_0.woff) format("woff"), url(../fonts/26421D_0_0.ttf) format("truetype"); }
-
+  src: url("fonts/26421D_0_0.eot");
+  src: url("fonts/26421D_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/26421D_0_0.woff") format("woff"), url("fonts/26421D_0_0.ttf") format("truetype"); }
 html {
   height: 100%; }
 
@@ -41,14 +40,12 @@ section {
       padding-top: 1em;
       padding-bottom: 4em; }
     #next .show.aladdin {
-      background: #00aeef url(../img/splash/aladdin/title.png) no-repeat 50% 50%;
+      background: #00aeef url(img/splash/aladdin/title.png) no-repeat 50% 50%;
       color: #f8f8f8; }
       #next .show.aladdin p {
         font-size: 1.25em; }
-      #next .show.aladdin a {
-        color: #fff301; }
     #next .show.once {
-      background: #ec008c url(../img/splash/once/title.png) no-repeat 50% 100%;
+      background: #ec008c url(img/splash/once/title.png) no-repeat 50% 100%;
       background-size: contain; }
       #next .show.once h2, #next .show.once h3, #next .show.once p {
         display: none; }
@@ -69,7 +66,7 @@ section {
         z-index: 1020;
         text-align: center; }
     #next .show.space {
-      background: #00aeef url(../img/splash/space/waves.png) repeat-x 50% 0;
+      background: #00aeef url(img/splash/space/waves.png) repeat-x 50% 0;
       padding: 200px 25% 0;
       color: white;
       text-align: center; }
@@ -80,7 +77,7 @@ section {
         right: 0;
         bottom: 0;
         margin: 0;
-        background: url(../img/splash/space/title.png) no-repeat 50% 0;
+        background: url(img/splash/space/title.png) no-repeat 50% 0;
         background-size: contain;
         text-indent: -1000px;
         overflow: hidden;
@@ -94,7 +91,7 @@ section {
         z-index: 1; }
     #next .show.alice {
       background-color: #fbaf3f;
-      background-image: url(../img/splash/alice/stripes.png);
+      background-image: url(img/splash/alice/stripes.png);
       background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.5, #f7931d), color-stop(0.5, transparent), to(transparent));
       background-image: -moz-linear-gradient(#f7931d 50%, transparent 50%, transparent);
       background-image: -o-linear-gradient(#f7931d 50%, transparent 50%, transparent);
@@ -113,7 +110,7 @@ section {
             left: 10px;
             right: 10px; } }
       #next .show.alice .container {
-        background: url(../img/splash/alice/title.png) no-repeat 50% 0;
+        background: url(img/splash/alice/title.png) no-repeat 50% 0;
         height: 384px;
         position: relative; }
         #next .show.alice .container h2 {
@@ -253,7 +250,7 @@ nav ul {
   #home .title .punch {
     margin-top: -80px;
     height: 240px;
-    background: url(../img/punch.png) no-repeat 100% 0;
+    background: url(img/punch.png) no-repeat 100% 0;
     background-size: contain; }
   #home .title h1 {
     font-family: "Populaire", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -284,7 +281,7 @@ nav ul {
       width: 84px;
       height: 84px;
       margin: 20px auto;
-      background-image: url(../img/punch-small.png);
+      background-image: url(img/punch-small.png);
       background-position: 50% 50%; } }
 
 #shows {
@@ -380,7 +377,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #222222;
+  background: #222;
   color: #ccc;
   padding: 1em 20px; }
   .costumes-website p {
@@ -430,7 +427,7 @@ footer {
   .modal.booking .ticket-pricing .total-price {
     font-weight: bold; }
 .modal.booking .loading-overlay {
-  background: white url(../img/loading.gif) no-repeat 50% 50%;
+  background: white url(img/loading.gif) no-repeat 50% 50%;
   opacity: 0.9;
   position: absolute;
   top: 0;

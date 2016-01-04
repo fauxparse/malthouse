@@ -41,8 +41,12 @@ class window.Show extends Spine.Model
     @_price
 
   venue: (venue) ->
-    @_venue_id = venue.id or venue if venue?
-    Venue.find @_venue_id
+    # @_venue_id = venue.id or venue if venue?
+    # Venue.find @_venue_id
+    if arguments.length
+      venue = new Venue unless venue instanceof Venue
+      @_venue = venue
+    @_venue
 
   @fetch: ->
     $.getJSON("/shows").done (data, textStatus, xhr) =>
