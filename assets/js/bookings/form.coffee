@@ -54,7 +54,7 @@ class window.BookingForm extends Spine.Controller
                 </div>
               </div>
               <div class=\"col-sm-5 ticket-pricing\">
-                &times; <span class=\"ticket-price\">$7</span> = <span class=\"total-price\">$14</span>
+                &times; <span class=\"ticket-price\">$8</span> = <span class=\"total-price\">$16</span>
               </div>
             </div>
             <div class=\"form-group\">
@@ -194,6 +194,7 @@ class window.BookingForm extends Spine.Controller
       shows:   ({ id: s.id, title: s.title() } for s in Show.all() when s.visible())
     @$("[name=show_id]").val show.id
     @updateDates()
+    @updatePrices()
 
   show: =>
     @el.modal "show"
