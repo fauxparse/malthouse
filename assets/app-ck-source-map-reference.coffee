@@ -1441,7 +1441,7 @@ class window.BookingForm extends Spine.Controller
                 <div class=\"radio\">
                   <label>
                     <input type=\"radio\" name=\"payment\" value=\"cash\">
-                    Cash on the door (sorry, no EFT-POS!)
+                    Cash/EFT-POS on the door
                   </label>
                 </div>
               </div>
