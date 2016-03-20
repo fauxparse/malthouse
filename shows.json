@@ -1,6 +1,27 @@
 {
   "shows" : [
     {
+      "id" : "3bears",
+      "title" : "3 Bears",
+      "byline" : "by Matt Powell & directed by Victoria Powell",
+      "dates" : {
+        "2016-04-16 11:00": true,
+        "2016-04-16 13:00": true,
+        "2016-04-17 11:00": true,
+        "2016-04-17 13:00": true,
+        "2016-04-23 11:00": true,
+        "2016-04-23 13:00": true,
+        "2016-04-24 11:00": true,
+        "2016-04-24 13:00": true,
+        "2016-04-30 11:00": true,
+        "2016-04-30 13:00": true,
+        "2016-05-01 11:00": true,
+        "2016-05-01 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 800
+    },
+    {
       "id" : "aladdin",
       "title" : "Aladdin",
       "byline" : "by Daisy Seely & directed by Sara Wilson",

@@ -39,6 +39,14 @@ section {
       font-size: 125%;
       padding-top: 1em;
       padding-bottom: 4em; }
+    #next .show.three-bears {
+      background: #bae5fa url(img/splash/bears/3bears.png) no-repeat 50% 0%;
+      background-size: contain;
+      text-align: center; }
+      #next .show.three-bears h2 {
+        display: none; }
+      #next .show.three-bears h3 {
+        padding-top: 212px; }
     #next .show.aladdin {
       background: #00aeef url(img/splash/aladdin/title.png) no-repeat 50% 50%;
       color: #f8f8f8; }

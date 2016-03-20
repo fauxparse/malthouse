@@ -61,6 +61,15 @@ section {
       padding-bottom: 4em;
     }
 
+    &.three-bears {
+      background: #bae5fa url(img/splash/bears/3bears.png) no-repeat 50% 0%;
+      background-size: contain;
+      text-align: center;
+
+      h2 { display: none; }
+      h3 { padding-top: 212px; }
+    }
+
     &.aladdin {
       background: $BLUE url(img/splash/aladdin/title.png) no-repeat 50% 50%;
       color: $WHITE;
