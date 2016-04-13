@@ -122,7 +122,7 @@ class window.BookingForm extends Spine.Controller
     </blockquote>
     {{/internetBanking}}
     {{^internetBanking}}
-    <p>Please bring <strong>{{total}}</strong> cash (or a cheque made out to Canterbury Children’s Theatre, Inc) to the performance with you. <strong>Sorry, we are unable to accept EFT-POS or credit cards at the theatre.</strong></p>
+    <p>Your total payment is <strong>{{total}}</strong>. Please bring payment with you to the performance: we accept cash, EFT-POS, or a cheque made out to Canterbury Children’s Theatre, Inc.</p>
     {{/internetBanking}}
     {{#email}}
     <p>We’ve emailed you a copy of this booking for your records, but you don’t need to bring it with you on the day.</p>
