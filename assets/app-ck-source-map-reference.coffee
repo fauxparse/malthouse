@@ -1657,7 +1657,7 @@ class window.BookingForm extends Spine.Controller
     @overlay.fadeOut()
     $("<div>")
       .addClass("alert alert-danger")
-      .html("<strong>Sorry!</strong> There was a problem processing your booking. Please check your details and try again, or call us now on <strong>0800 BOOKINGS</strong>")
+      .html("<strong>Sorry!</strong> There was a problem processing your booking. Please check your details and try again, or email us at <a class=\"email\" href=\"mailto:enquiries@malthouse.co.nz\">enquiries@malthouse.co.nz</a>")
       .prependTo(@form)
 
   keypress: (e) ->

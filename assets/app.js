@@ -2371,7 +2371,7 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
 
     BookingForm.prototype.error = function(record, xhr, settings, error) {
       this.overlay.fadeOut();
-      return $("<div>").addClass("alert alert-danger").html("<strong>Sorry!</strong> There was a problem processing your booking. Please check your details and try again, or call us now on <strong>0800 BOOKINGS</strong>").prependTo(this.form);
+      return $("<div>").addClass("alert alert-danger").html("<strong>Sorry!</strong> There was a problem processing your booking. Please check your details and try again, or email us at <a class=\"email\" href=\"mailto:enquiries@malthouse.co.nz\">enquiries@malthouse.co.nz</a>").prependTo(this.form);
     };
 
     BookingForm.prototype.keypress = function(e) {
