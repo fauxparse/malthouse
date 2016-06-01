@@ -61,6 +61,39 @@ section {
       padding-bottom: 4em;
     }
 
+    &.snow-white {
+      background: #555 url(img/splash/snow-white/monsters.png) no-repeat 50% 30%;
+      background-size: cover;
+      color: white;
+
+      .title {
+        display: block;
+        width: 60%;
+        height: auto;
+        margin: 1em 0;
+      }
+
+      h2 {
+        display: none;
+      }
+
+      h3 {
+        width: 60%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        width: 200px;
+        height: 108px;
+        max-width: 30%;
+        background: url(img/splash/snow-white/kidsfest.png) no-repeat 100% 0%;
+        background-size: contain;
+      }
+    }
+
     &.three-bears {
       background: #bae5fa url(img/splash/bears/3bears.png) no-repeat 50% 0%;
       background-size: contain;

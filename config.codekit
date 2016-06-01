@@ -307,6 +307,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/splash\/snow-white\/kidsfest.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25206,
+		"inputAbbreviatedPath": "\/assets\/img\/splash\/snow-white\/kidsfest.png",
+		"outputAbbreviatedPath": "\/assets\/img\/splash\/snow-white\/kidsfest.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/splash\/snow-white\/monsters.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26412,
+		"inputAbbreviatedPath": "\/assets\/img\/splash\/snow-white\/monsters.png",
+		"outputAbbreviatedPath": "\/assets\/img\/splash\/snow-white\/monsters.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/splash\/snow-white\/snow-white.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23956,
+		"inputAbbreviatedPath": "\/assets\/img\/splash\/snow-white\/snow-white.png",
+		"outputAbbreviatedPath": "\/assets\/img\/splash\/snow-white\/snow-white.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/splash\/space\/title.png": {
 		"fileType": 32768,
 		"ignore": 0,

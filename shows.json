@@ -1,6 +1,27 @@
 {
   "shows" : [
     {
+      "id" : "snow",
+      "title" : "Snow White",
+      "byline" : "by Vivianne Watson & directed by Scott Campbell",
+      "dates" : {
+        "2016-07-09 11:00": true,
+        "2016-07-09 13:00": true,
+        "2016-07-10 11:00": true,
+        "2016-07-10 13:00": true,
+        "2016-07-16 11:00": true,
+        "2016-07-16 13:00": true,
+        "2016-07-17 11:00": true,
+        "2016-07-17 13:00": true,
+        "2016-07-23 11:00": true,
+        "2016-07-23 13:00": true,
+        "2016-07-24 11:00": true,
+        "2016-07-24 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 800
+    },
+    {
       "id" : "3bears",
       "title" : "3 Bears",
       "byline" : "by Matt Powell & directed by Victoria Powell",
@@ -116,7 +137,7 @@
       "address"  : "71 Colombo Street, Christchurch",
       "geo"      : [ -43.560974, 172.636555 ],
       "phone"    : "03 332 3271",
-      "capacity" : 85
+      "capacity" : 80
     }
   ]
 }
