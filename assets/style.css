@@ -39,6 +39,8 @@ section {
       font-size: 125%;
       padding-top: 1em;
       padding-bottom: 4em; }
+    #next .show.backbeard {
+      background: #8fd8f8; }
     #next .show.snow-white {
       background: #555 url(img/splash/snow-white/monsters.png) no-repeat 50% 30%;
       background-size: cover;

@@ -1,6 +1,27 @@
 {
   "shows" : [
     {
+      "id" : "backbeard",
+      "title" : "Backbeard and the Birthday Suit",
+      "byline" : "adapted by Nickie Wellbourn and directed by Raoul Neave",
+      "dates" : {
+        "2016-09-26 11:00": true,
+        "2016-09-26 13:00": true,
+        "2016-09-27 11:00": true,
+        "2016-09-27 13:00": true,
+        "2016-10-01 11:00": true,
+        "2016-10-01 13:00": true,
+        "2016-10-02 11:00": true,
+        "2016-10-02 13:00": true,
+        "2016-10-08 11:00": true,
+        "2016-10-08 13:00": true,
+        "2016-10-09 11:00": true,
+        "2016-10-09 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 800
+    },
+    {
       "id" : "snow",
       "title" : "Snow White",
       "byline" : "by Vivianne Watson & directed by Scott Campbell",
@@ -10,7 +31,7 @@
         "2016-07-10 11:00": true,
         "2016-07-10 13:00": true,
         "2016-07-16 11:00": true,
-        "2016-07-16 13:00": true,
+        "2016-07-16 13:00": false,
         "2016-07-16 15:00": true,
         "2016-07-17 11:00": true,
         "2016-07-17 13:00": true,
