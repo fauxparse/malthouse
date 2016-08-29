@@ -63,6 +63,18 @@ section {
 
     &.backbeard {
       background: #8fd8f8;
+
+      .container {
+        background: url(img/splash/backbeard/backbeard.jpg) no-repeat 100% 50%;
+        background-size: contain;
+      }
+
+      h2 small {
+        display: block;
+        font-size: 50%;
+        color: inherit;
+        opacity: .75;
+      }
     }
 
     &.snow-white {

@@ -41,6 +41,14 @@ section {
       padding-bottom: 4em; }
     #next .show.backbeard {
       background: #8fd8f8; }
+      #next .show.backbeard .container {
+        background: url(img/splash/backbeard/backbeard.jpg) no-repeat 100% 50%;
+        background-size: contain; }
+      #next .show.backbeard h2 small {
+        display: block;
+        font-size: 50%;
+        color: inherit;
+        opacity: .75; }
     #next .show.snow-white {
       background: #555 url(img/splash/snow-white/monsters.png) no-repeat 50% 30%;
       background-size: cover;

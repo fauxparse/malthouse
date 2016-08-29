@@ -285,6 +285,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/splash\/backbeard\/backbeard.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27904,
+		"inputAbbreviatedPath": "\/assets\/img\/splash\/backbeard\/backbeard.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/splash\/backbeard\/backbeard.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/splash\/bears\/3bears.png": {
 		"fileType": 32768,
 		"ignore": 0,
