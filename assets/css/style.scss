@@ -61,6 +61,17 @@ section {
       padding-bottom: 4em;
     }
 
+    &.oz {
+      background: black;
+      color: white;
+
+      .container {
+        min-height: 384px;
+        background: url(img/splash/oz/oz.jpg) no-repeat 100% 0%;
+        background-size: contain;
+      }
+    }
+
     &.backbeard {
       background: #8fd8f8;
 

@@ -318,6 +318,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/splash\/oz\/oz.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46146,
+		"inputAbbreviatedPath": "\/assets\/img\/splash\/oz\/oz.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/splash\/oz\/oz.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/splash\/snow-white\/kidsfest.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -771,7 +782,7 @@
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "malthouse",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_brown"
 	},
 "projectSettings": {

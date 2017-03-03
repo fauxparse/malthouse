@@ -1,6 +1,27 @@
 {
   "shows" : [
     {
+      "id" : "oz",
+      "title" : "Lost in Oz",
+      "byline" : "written and directed by Sarah Hollander",
+      "dates" : {
+        "2017-04-15 11:00": true,
+        "2017-04-15 13:00": true,
+        "2017-04-17 11:00": true,
+        "2017-04-17 13:00": true,
+        "2017-04-22 11:00": true,
+        "2017-04-22 13:00": true,
+        "2017-04-23 11:00": true,
+        "2017-04-23 13:00": true,
+        "2017-04-29 11:00": true,
+        "2017-04-29 13:00": true,
+        "2017-04-30 11:00": true,
+        "2017-04-30 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 800
+    },
+    {
       "id" : "backbeard",
       "title" : "Backbeard, the Hairiest Pirate Who Ever Lived",
       "byline" : "adapted by Nickie Wellbourn and directed by Raoul Neave",
