@@ -12,16 +12,24 @@ class Mailer
     from:     "malthouse.bookings@gmail.com"
     fromname: "Canterbury Children’s Theatre"
     to:       "malthouse.bookings@gmail.com"
-  
+
   @mailer: ->
-    @sendgrid or= new SendGrid(
-      process.env.SENDGRID_USERNAME,
-      process.env.SENDGRID_PASSWORD
-    )
-    
+    @sendgrid or= SendGrid(process.env.SENDGRID_API_KEY)
+
   @send: (options) ->
     options = _.merge {}, @DEFAULTS, options
-    @mailer().send options
+    helper = SendGrid.mail
+    from_email = new helper.Email(options.from)
+    to_email = new helper.Email(options.to)
+    subject = options.subject
+    content = new helper.Content('text/html', options.html)
+    mail = new helper.Mail(from_email, subject, to_email, content)
+    console.log mail
+    request = @mailer().emptyRequest(method: 'POST', path: '/v3/mail/send', body: mail.toJSON())
+    @mailer().API request, (error, response) =>
+      console.log(response.statusCode)
+      console.log(response.body)
+      console.log(response.headers)
 
   @render: (template, data, callback) ->
     body = ""
@@ -30,7 +38,7 @@ class Mailer
         body += chunk.toString()
       .on "end", ->
         callback false, body
-  
+
   @sendBookingConfirmation: (booking) ->
     show = booking.show()
     date = new Date(booking.date)
