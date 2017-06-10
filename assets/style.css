@@ -3,6 +3,7 @@
   font-family: 'Populaire';
   src: url("fonts/26421D_0_0.eot");
   src: url("fonts/26421D_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/26421D_0_0.woff") format("woff"), url("fonts/26421D_0_0.ttf") format("truetype"); }
+
 html {
   height: 100%; }
 
@@ -39,6 +40,8 @@ section {
       font-size: 125%;
       padding-top: 1em;
       padding-bottom: 4em; }
+    #next .show.rumpelstiltskin {
+      background: #fff301; }
     #next .show.oz {
       background: black;
       color: white; }
@@ -405,10 +408,12 @@ nav ul {
     right: 0;
     bottom: 100%;
     margin-bottom: 10px; }
+
 #contact .vcard .fn,
 #contact .vcard .email,
 #contact .vcard .tel .value {
   font-weight: bold; }
+
 #contact .vcard [rel=facebook] {
   font-weight: bold;
   display: block; }
@@ -447,6 +452,7 @@ footer {
   color: #ec008c;
   font-size: 250%;
   line-height: 0.75em; }
+
 .modal.booking [rel="performances"] .dropdown-menu :disabled,
 .modal.booking [rel="performances"] .dropdown-menu .disabled {
   text-decoration: line-through; }
@@ -457,16 +463,20 @@ footer {
     text-decoration: none;
     font-weight: bold;
     margin-left: 0.25em; }
+
 .modal.booking .input-group input {
   text-align: center;
   padding-left: 4px;
   padding-right: 4px;
   font-size: 150%;
   width: 2.333333em; }
+
 .modal.booking .input-group [rel="minus"] {
   border-right: none; }
+
 .modal.booking .input-group [rel="plus"] {
   border-left: none; }
+
 .modal.booking .ticket-pricing {
   line-height: 34px;
   font-size: 150%;
@@ -474,6 +484,7 @@ footer {
   padding-left: 0; }
   .modal.booking .ticket-pricing .total-price {
     font-weight: bold; }
+
 .modal.booking .loading-overlay {
   background: white url(img/loading.gif) no-repeat 50% 50%;
   opacity: 0.9;
@@ -495,8 +506,8 @@ footer {
 @media (max-width: 767px) {
   body {
     padding: 0; }
-
   section {
     padding: 20px; } }
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   /* Don't forget your Retina CSS! */ }

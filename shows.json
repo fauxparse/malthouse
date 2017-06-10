@@ -1,6 +1,27 @@
 {
   "shows" : [
     {
+      "id" : "rumpelstiltskin",
+      "title" : "Rumpelstiltskin",
+      "byline" : "written by Jessi Robb and Josiah Morgan and directed by Josiah Morgan",
+      "dates" : {
+        "2017-07-08 11:00": true,
+        "2017-07-08 13:00": true,
+        "2017-07-09 11:00": true,
+        "2017-07-09 13:00": true,
+        "2017-07-15 11:00": true,
+        "2017-07-15 13:00": true,
+        "2017-07-16 11:00": true,
+        "2017-07-16 13:00": true,
+        "2017-07-22 11:00": true,
+        "2017-07-22 13:00": true,
+        "2017-07-23 11:00": true,
+        "2017-07-23 13:00": true
+      },
+      "venue" : "malthouse",
+      "price" : 800
+    },
+    {
       "id" : "oz",
       "title" : "Lost in Oz",
       "byline" : "written and directed by Sarah Hollander",
